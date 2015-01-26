@@ -9,6 +9,7 @@
 \usepackage{color}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
+\usepackage{float}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -54,28 +55,16 @@ Vejleder: Stig og CHR}
 This article demonstrates a basic set of LaTeX formatting commands.
 Compare the typeset output side-by-side with the input document.smøøre
 \end{abstract}
+
 \tableofcontents
-\section{Spørgsmål}
-\emph{Jeg har fået følgende spørgsmål stillet af Christian, som er min vejleder i IT}
 
-\begin{itemize}
-\item Lav en kort (30-40 linjer) beskrivelse af dit emne.
-\item Besvar de fem spørgsmål i pentagonen:
-\begin{enumerate}
-\item Hvad spørger du om? (Hvad er din problemformulering)?
-\item Hvorfor spørger du? (Hvad er de faglige problemstillinger? Hvad er interessant? Hvad undrer du dig over?)
-\item Hvad spørger du til? (Hvilket materiale skal du arbejde med? Hvad skal du
-analysere?)
-\item Hvad spørger du med? (Hvilke metoder vil du anvende?)
-\item Hvordan vil du gå frem?(Hvordan vil du strukturere og disponere din opgave?)
-\end{enumerate}
-\item Skriv en foreløbig kommenteret kildeliste
-\end{itemize}
+\section{Forklaring af numerisk integration}
 
-Disse spørgsmål vil jeg besvare på næste side.
 
-\newpage
+
 \section{Trapezmetoden}
+\label{sec:trapezmetoden}
+Trapezmetoden er en af flere metoder til at finde areal under en funktion. Det er en af de mere præcise metoder, da den, i modsætning til højre-, venstre- og middelsum, laver en trapez og ikke en firkant.
 \subsection{Bevis for trapezmetoden}
 Ved at bruge trapezmetoden kan vi tilnærmelsesvist finde det bestemte integral, selv for funktioner, hvor man ikke direkte kan bestemme det bestemte integral. Et eksempel på dette er funktionen $f(x)=e^{-x^{2}}$.
 For at bestemme arealet under en funktion vil vi gerne nærme os det bestemte integral.
@@ -84,7 +73,7 @@ For at bestemme arealet under en funktion vil vi gerne nærme os det bestemte in
 \end{equation}
 Når $a<b$ og $f$ er kontinuerlig og differentiabel i intervallet $[a;b]$, kan vi bruge trapezmetoden til at udregne det tilnærmelsesvist bestemte integral, som er arealet under funktionen.\\
 Som navnet trapezmetoden så fint hentyder til, opdeler vi vores funktion i en trapez, som vi udregner arealet af. Dette er illustreret på figur \ref{fig:trapezmetoden}
-\begin{figure}[tbph]
+\begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{Billeder/trapezmetoden.png}
 \caption{Trapezmetoden}
@@ -97,7 +86,7 @@ På figur \ref{fig:trapezmetoden} kan man se, hvordan trapezmetoden opdeler en p
 \label{eq:trapezareal}
 A=\frac{1}{2}h\cdot(a+b)
 \end{equation}
-\begin{figure}
+\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.8]{Billeder/Trapez}
 	\caption{Trapez}
@@ -147,6 +136,13 @@ Dette bliver reduceret til formlen for trapezmetoden \eqref{eq:trapezmetoden}
 \boxed{\int_{a}^{b}f(x) \approx \frac{h}{2}(f(x_0) + 2f(x_1) + \cdots + 2f(x_{n-1}) + f(x_n))} \\ \text{Hvor } h=\frac{b-a}{n} \nonumber
 \end{align}
 
+\section{Simpsons metode}
+En anden metode til tilnærmelsesvist at udregne arealet under en funktion er simpsons-metoden, som virker ved at dele funktionen op i mindre parabler, man så finder arealet under. Denne metode er mere præcis end trapezmetoden\footnote{\cite[side 15]{2012matA}}, og giver derfor et resultat som oftest har en meget lille afvigelse fra det korrekte resultat, det bestemte integral.
+\subsection{Bevis for Simpsons metode}
+Simpsons metode er som nævnt, en anden metode til tilnærmelsesvist at finde det bestemte integral, selv for funktioner, hvor man ikke direkte kan bestemme det bestemte integral. Med trapezmetoden, se afsnit \ref{sec:trapezmetoden}, brugte man en ret linje fra $f(a)$ til $f(b)$ i intervallet $[a;b]$, hvilket selvfølgelig ikke er helt præcis, da en funktion ikke nødvendigvis er ret. Med Simpsons metode opdeler man intervallet $[a;b]$ i en parabel ud fra 3 punkter, $a,b,c$. Disse tre punkter kan bruges til at opstille en simplere parabel, som vi så kan regne arealet under. Parablens ligning ser således ud: $y=ax^2+bx+c$
+
+\subsubsection{Opdeling i intervaller}
+
 \clearpage
 \addcontentsline{toc}{section}{Litteratur}
 \begin{thebibliography}{9}
@@ -168,6 +164,10 @@ Dette bliver reduceret til formlen for trapezmetoden \eqref{eq:trapezmetoden}
 	Aalborg Universitet,
 	\emph{Et foredag fra Aalborg Universitet omhandlende Numerisk Integration}.\\
 	http://staff.iha.dk/jse/bioproces/Forelaesningsnoter/BI1MAT1/\\Numeriske\%20metoder\%201.pdf
+\bibitem{2012matA}
+	Undervisningsministeriet,
+	\emph{Forberedelse til Matematik A højere teknisk eksamen 2012},
+	\url{http://uvm.dk/~/media/UVM/Filer/Udd/Gym/PDF12/Proever\%20og\%20eksamen/120608\%20Mat\%20A\%20htx\%20Forberedelsesmateriale.pdf}
 
 \end{thebibliography}
 

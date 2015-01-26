@@ -1,6 +1,9 @@
 \select@language {danish}
-\contentsline {section}{\numberline {1}Sp\IeC {\o }rgsm\IeC {\r a}l}{1}{section.1}
-\contentsline {section}{\numberline {2}Trapezmetoden}{3}{section.2}
-\contentsline {subsection}{\numberline {2.1}Bevis for trapezmetoden}{3}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Opdeling i intervaller}{5}{subsubsection.2.1.1}
-\contentsline {section}{Litteratur}{7}{equation.2.7}
+\contentsline {section}{\numberline {1}Forklaring af numerisk integration}{2}{section.1}
+\contentsline {section}{\numberline {2}Trapezmetoden}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Bevis for trapezmetoden}{2}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Opdeling i intervaller}{4}{subsubsection.2.1.1}
+\contentsline {section}{\numberline {3}Simpsons metode}{5}{section.3}
+\contentsline {subsection}{\numberline {3.1}Bevis for Simpsons metode}{5}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Opdeling i intervaller}{6}{subsubsection.3.1.1}
+\contentsline {section}{Litteratur}{7}{subsubsection.3.1.1}
