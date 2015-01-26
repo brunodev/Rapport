@@ -92,7 +92,7 @@ Som navnet trapezmetoden så fint hentyder til, opdeler vi vores funktion i en t
 \end{figure}
 
 
-På figur \ref{fig:trapezmetoden} kan man se, hvordan trapezmetoden opdeler en parabel i en trapez. Denne trapez har intervallet $[a;b]$. Længden $a=f(a)$ og længden $b=f(b)$. Formlen for arealet af en trapez ses i formel \ref{eq:trapezareal}
+På figur \ref{fig:trapezmetoden} kan man se, hvordan trapezmetoden opdeler en parabel i en trapez. Denne trapez har intervallet $[a;b]$. Længden $a=f(a)$ og længden $b=f(b)$. Formlen for arealet af en trapez ses i formel \eqref{eq:trapezareal}
 \begin{equation}
 \label{eq:trapezareal}
 A=\frac{1}{2}h\cdot(a+b)
@@ -141,7 +141,7 @@ A &= \frac{h}{2}(f(x_0)+ f(x_1)) + \frac{h}{2}(f(x_1)+ f(x_2)) + \cdots + \frac{
 \\ &= h(\frac{1}{2}f(x_0) + \frac{1}{2}f(x_1)) + h(\frac{1}{2}f(x_1) + \frac{1}{2}f(x_2)) + \cdots + h(\frac{1}{2}f(x_{n-1}) + \frac{1}{2}f(x_n)) \nonumber
 \\ &= h \cdot \frac{1}{2}f(x_0) + h \cdot \frac{1}{2}f(x_1) + h \cdot \frac{1}{2}f(x_1) + h \cdot \frac{1}{2}f(x_2) + \cdots + h \cdot \frac{1}{2}f(x_{n-1}) + h \cdot \frac{1}{2}f(x_n) \nonumber
 \end{align}
-Dette bliver reduceret til formlen for trapezmetoden (\ref{eq:trapezmetoden})
+Dette bliver reduceret til formlen for trapezmetoden \eqref{eq:trapezmetoden}
 \begin{align}
 \label{eq:trapezmetoden}
 \boxed{\int_{a}^{b}f(x) \approx \frac{h}{2}(f(x_0) + 2f(x_1) + \cdots + 2f(x_{n-1}) + f(x_n))} \\ \text{Hvor } h=\frac{b-a}{n} \nonumber
