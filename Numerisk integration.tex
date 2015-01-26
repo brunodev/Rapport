@@ -140,8 +140,30 @@ Dette bliver reduceret til formlen for trapezmetoden \eqref{eq:trapezmetoden}
 En anden metode til tilnærmelsesvist at udregne arealet under en funktion er simpsons-metoden, som virker ved at dele funktionen op i mindre parabler, man så finder arealet under. Denne metode er mere præcis end trapezmetoden\footnote{\cite[side 15]{2012matA}}, og giver derfor et resultat som oftest har en meget lille afvigelse fra det korrekte resultat, det bestemte integral.
 \subsection{Bevis for Simpsons metode}
 Simpsons metode er som nævnt, en anden metode til tilnærmelsesvist at finde det bestemte integral, selv for funktioner, hvor man ikke direkte kan bestemme det bestemte integral. Med trapezmetoden, se afsnit \ref{sec:trapezmetoden}, brugte man en ret linje fra $f(a)$ til $f(b)$ i intervallet $[a;b]$, hvilket selvfølgelig ikke er helt præcis, da en funktion ikke nødvendigvis er ret. Med Simpsons metode opdeler man intervallet $[a;b]$ i en parabel ud fra 3 punkter, $a,b,c$. Disse tre punkter kan bruges til at opstille en simplere parabel, som vi så kan regne arealet under. Parablens ligning ser således ud: $y=ax^2+bx+c$
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\linewidth]{Billeder/Simpsonsmetode}
+\caption{Simpsons metode}
+\label{fig:simpsonsmetode}
+\end{figure}
 
-\subsubsection{Opdeling i intervaller}
+Figur \ref{fig:simpsonsmetode} viser hvilke punkter vores parabel går gennem når vi har intervallet $[a;b]$. Ligesom med trapezmetoden kan man opdele funktionen i $n$ antal dele. Til at starte med går vi ud fra at $n=2$, for at gøre det nemt.\emph{I afsnit \ref{sec:simpsonopdeling} bliver der viderebygget på Simpsons metode med flere intervaller.}
+Som man også kan se på figuren bliver $[a;b]$ delt op i to, hvor $\triangle x=h$. Dette viser sig også i punkterne som henholdsvis er $(-h,y_0)$, $(0,y_1)$ og $(h,y_2)$. Intervallet $[a;b]$ opdeles i $n$ antal delintervaller, som for dette tilfælde er 2, hvilket giver afstanden h mellem vores punkter.
+\begin{align}
+h &= \frac{b-a}{n} \nonumber
+\\&= \frac{b-a}{2} &\text{Når } n=2
+\end{align}
+Vi ved at vores parabel går fra $-h$ til $h$ og at den har forskriften $y=ax^2+bx+c$. Dette simple udtryk for vores parabel kan vi bestemme det bestemte integral af, da vi ved at $f(x)=y$. Vi finder dermed det bestemte areal under en parabel med forskriften $y=ax^2+bx+c$ fra $-h$ til $h$
+\begin{align}
+A &=\int_{-h}^{h}f(x)dx \nonumber
+\\ &=\left[ \frac{ax^3}{3} + \frac{bx^2}{2} + cx \right]_{-h}^{h} \nonumber
+\\ &= \left( \frac{ah^3}{3} + \frac{bh^2}{2} + ch \right) - \left( -\frac{ah^3}{3} + \frac{bh^2}{2} - ch \right) \nonumber
+\\ &= \frac{ah^3}{3} + \frac{ah^3}{3} + \frac{bh^2}{2} - \frac{bh^2}{2} + ch + ch \nonumber
+\\ &= \frac{2ah^3}{3} + 2ch
+\end{align}
+
+\subsubsection{Opdeling i flere intervaller}
+\label{sec:simpsonopdeling}
 
 \clearpage
 \addcontentsline{toc}{section}{Litteratur}

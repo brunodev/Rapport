@@ -5,5 +5,5 @@
 \contentsline {subsubsection}{\numberline {2.1.1}Opdeling i intervaller}{4}{subsubsection.2.1.1}
 \contentsline {section}{\numberline {3}Simpsons metode}{5}{section.3}
 \contentsline {subsection}{\numberline {3.1}Bevis for Simpsons metode}{5}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Opdeling i intervaller}{6}{subsubsection.3.1.1}
-\contentsline {section}{Litteratur}{7}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Opdeling i flere intervaller}{7}{subsubsection.3.1.1}
+\contentsline {section}{Litteratur}{8}{subsubsection.3.1.1}
