@@ -109,7 +109,7 @@ A &= \frac{1}{2}h\cdot(a+b) &\Rightarrow \nonumber
 \\ \int_{a}^{b}f(x) &\approx \frac{b-a}{2} (f(a)+f(b))
 \end{align}
 
-\subsubsection{Opdeling i intervaller}
+\subsubsection{Opdeling i flere delintervaller}
 \label{sec:opdelingtrapezmetoden}
 Som man kan se på figur \ref{fig:trapezmetoden} er trapezmetoden meget upræcis i forhold til det bestemte integral. Dette kan man forbedre ved at dele intervallet $[a;b]$ op i flere delintervaller, $n$. Dvs. at vi deler vores funktion op i mindre intervaller, som vi så finder arealet af med trapezmetoden. Disse delintervaller kalder vi for $x_0, x_1, \cdots x_n$. Vi skal bruge højden på trapezen, som er længden af delintervallet $x_0 - x_1$. I dette tilfælde svarer det til:
 \begin{align}
@@ -170,18 +170,87 @@ Nu skal vi finde vores 2 ubekendte, som er $2ah^2$ og $c$. Dette kan vi gøre ve
 
 \begin{align}
 \label{eq:ubekendte}
-y_0 &= ah^2-bh+c & \text{Hvor} (x,y) &=(-h,y_0)
+y_0 &= ah^2-bh+c & \text{Hvor } (x,y) &=(-h,y_0)
 \\ y_1 &= a \cdot 0^2+b \cdot 0 +c \Rightarrow \nonumber
-\\ y_1 &= c & \text{Hvor} (x,y) &=(0,y_1)
-\\ y_2 &= ah^2+bh+c & \text{Hvor} (x,y) &=(h,y_2)
+\\ y_1 &= c & \text{Hvor } (x,y) &=(0,y_1)
+\\ y_2 &= ah^2+bh+c & \text{ } (x,y) &=(h,y_2)
 \end{align}
 Som man kan se på ligningen for $y_1$ \eqref{eq:ubekendte} har vi allerede fået isoleret vores $c$ værdi, som svarer til $c=y_1$
+Vi vil gerne have isoleret $2ah^2$, og dette kan vi gøre ved at substituere $c$ ind i de to ligninger for $y_0$ og $y_2$ og derefter ligge dem sammen.
+\\\\
+Det gør vi således:
+\begin{align}
+y_0 &= ah^2 - bh + c &\Rightarrow &&\text{Hvor } c=y_1 \nonumber
+\\ y_0 &= ah^2 -bh + y_1 & \Rightarrow \nonumber
+\\ y_0-y_1 &= ah^2-bh
+\label{eq:ah2-bh}
+\\ \nonumber
+\\y_2 &= ah^2 + bh + c &\Rightarrow &&\text{Hvor } c=y_1 \nonumber
+\\y_2 &= ah^2 + bh + y_1 & \Rightarrow \nonumber
+\\y_2 - y_1 &= ah^2 +bh
+\label{eq:ah2+bh}
+\end{align}
+Ligning \eqref{eq:ah2-bh} og \eqref{eq:ah2+bh} ligges nu sammen, så vi kan isolere den sidste og manglende ubekendte, $2ah^2$.
+
+\begin{align}
+	y_2 - y_1 &= ah^2 - bh &+ \nonumber
+\\	y_0 - y_1 &= ah^2 + bh \nonumber
+\\ &&= \nonumber
+\\ ah^2 -bh + bh &= y_2 + y_0 - y_1 - y_1 \Rightarrow \nonumber
+\\ ah^2 &= y_2 + y_0 - 2y_1
+\end{align}
+$ah^2$ og $c$ substitueres nu ind i formel \eqref{eq:integral-hh} som ser således ud: $A = \frac{h}{3}(2ah^2+6c).$
+
+\begin{align}
+\label{eq:ensimpson}
+A &= \frac{h}{3}(2ah^2+6c) \nonumber
+\\&= \frac{h}{3}\left( \left( y_2+y_0-2y_1 \right) + 6 \cdot y_1 \right) \nonumber
+\\&= \frac{h}{3}(y_0+4y_1+y_2)
+\end{align}
+
 
 %Ud fra ligning \eqref{integral-hh} kan vi lave vores parabel ved at opstille tre ligninger med 3 ubekendte, vha. vores 3 punkter: $(-h,y_0)$, $(0,y_1)$, $(h,y_2)$.
 %De tre ligninger ser således ud:
 
-\subsubsection{Opdeling i flere intervaller}
+\subsubsection{Opdeling i flere delintervaller}
+Når vi deler vores interval op i flere delintervaller, dvs. at $n$ bliver større, kan vi finde summen af $n$ antal delintervaller mellem $[a;b]$. På figur \ref{fig:simpsonOpdeling} kan man se et eksempel på en opdeling med $n=2$, hvor vi faktisk har 2 parabler. En fra $y_0$ til $y_2$ gennem $y_1$ og en fra $y_2$ til $y_4$ gennem $y_3$.
 \label{sec:simpsonopdeling}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\linewidth]{Billeder/simpsonOpdeling}
+\caption{Opdeling i flere delintervaller}
+\label{fig:simpsonOpdeling}
+\end{figure}
+
+Ved hjælp af formel \eqref{eq:ensimpson} kan vi udregne arealet af en parabel fra $y_0$ til $y_2$. Men hvis vi udvider denne som man kan se på figur \ref{fig:simpsonOpdeling}, kan vi fortsætte simpsonsreglen fra $y_2$ til $y_4$, og dermed få det samlede areal for $[a;b]$ som går fra $y_0$ til $y_4$, som man kan se på figur \ref{fig:simpsonOpdeling}.
+Summen af arealet fra $[a;b]$ når opdelingen $n=4$
+\begin{align}
+\label{eq:simpsonOpdeling}
+A_{[a;b]} 	&= \frac{h}{3}(y_0 + 4y_1 + y_2) + \frac{h}{3}(y_2 + 4y_3 + y_4) \nonumber
+\\ 			&= \frac{h}{3}(y_0 + 4y_1 + y_2 + y_2 +4y_3 +y_4) \nonumber
+\\			&= \frac{h}{3}(y_0 + 4y_1 + 2y_2 + 4y_3 + y_4) & \text{Hvor } y=f(x)
+\intertext{Det samme sker hvis vi har en opdeling på $n=6$}
+A_{[a;b]}	&= \frac{h}{3}(y_0 + 4y_1 + 2y_2 + 4y_3 + 2y_4 + 4y_5 + y_6) & \text{Når } n=6
+\label{eq:simpsonOpdeling6}
+\end{align}
+Ud fra dette kan vi opstille en ligning der siger at summen af alle delarealerne i intervallet $[a;b]$ opdelt i $n$ delintervaller tilnærmelsesvist må svare til det bestemte integral.
+\begin{align}
+A &= \lim\limits_{n \rightarrow \infty} \sum_{i=1}^{n/2} \frac{h}{3}(y_{i-2} + 4y_{i-1} + y_{i}) \approx \int_{a}^{b}f(x) &\text{hvor }h=\frac{b-a}{n}
+\end{align}
+Når n går mod uendelig bliver vores delinterval infinitesimalt lille, hvilket vil sige at summen af alle vores delintervaller, hvor vi har udregnet arealet under parablen. På den måde nærmer det, vha. Simpsons metode, udregnede areal tilnærmelsesvist det bestemte integral.
+\\\\
+For at udlede dette til formlen for Simpsons metode, skal vi kigge nærmere på formel \eqref{eq:ensimpson} og omskrive denne til at $n$ går mod uendelig.
+\begin{align}
+A	&= \frac{h}{3}(f(x)_0 + 4f(x)_1 + f(x)_2) \qquad \qquad \qquad \qquad \quad \text{Hvor } f(x)=y \text{ og } n = 2 \nonumber
+\\	&= \frac{h}{3}(f(x_0) + 4f(x_1) + f(x_2) + f(x_2) + 4f(x_3) + f(x_4)  	+ \cdots + f(x_{n-2} + 4f(x_{n-1}) + f(x_n) ) \nonumber
+\end{align}
+Dette bliver reduceret til Simpsons metode \eqref{eq:simpsonsmetode}
+\begin{align}
+\label{eq:simpsonsmetode}
+\boxed{\int_{a}^{b} \approx \frac{h}{3}(f(x_0) + 4f(x_1) + 2f(x_2) + 4f(x_3) + \cdots + f(x_{n-2} + 4f(x_{n-1}) + f(x_n) )}
+\\ \text{Hvor } h=\frac{b-a}{h} \text{ og $n$ er lige} \nonumber
+\end{align}
+
 
 \section{Computeralgoritmer og numerisk integration}
 \subsection{Trapezmetoden}

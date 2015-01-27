@@ -2,10 +2,10 @@
 \BOOKMARK [1][-]{section.2}{Forklaring af numerisk integration}{}% 2
 \BOOKMARK [1][-]{section.3}{Trapezmetoden}{}% 3
 \BOOKMARK [2][-]{subsection.3.1}{Bevis for trapezmetoden}{section.3}% 4
-\BOOKMARK [3][-]{subsubsection.3.1.1}{Opdeling i intervaller}{subsection.3.1}% 5
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Opdeling i flere delintervaller}{subsection.3.1}% 5
 \BOOKMARK [1][-]{section.4}{Simpsons metode}{}% 6
 \BOOKMARK [2][-]{subsection.4.1}{Bevis for Simpsons metode}{section.4}% 7
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Opdeling i flere intervaller}{subsection.4.1}% 8
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Opdeling i flere delintervaller}{subsection.4.1}% 8
 \BOOKMARK [1][-]{section.5}{Computeralgoritmer og numerisk integration}{}% 9
 \BOOKMARK [2][-]{subsection.5.1}{Trapezmetoden}{section.5}% 10
 \BOOKMARK [2][-]{subsection.5.2}{Simpsons metode}{section.5}% 11
