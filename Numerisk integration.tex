@@ -88,7 +88,7 @@ A=\frac{1}{2}h\cdot(a+b)
 \end{equation}
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.8]{Billeder/Trapez}
+	\includegraphics[scale=0.6]{Billeder/Trapez}
 	\caption{Trapez}
 	\label{fig:trapez}
 \end{figure}
@@ -155,12 +155,28 @@ h &= \frac{b-a}{n} \nonumber
 \end{align}
 Vi ved at vores parabel går fra $-h$ til $h$ og at den har forskriften $y=ax^2+bx+c$. Dette simple udtryk for vores parabel kan vi bestemme det bestemte integral af, da vi ved at $f(x)=y$. Vi finder dermed det bestemte areal under en parabel med forskriften $y=ax^2+bx+c$ fra $-h$ til $h$
 \begin{align}
+\label{eq:integral-hh}
 A &=\int_{-h}^{h}f(x)dx \nonumber
 \\ &=\left[ \frac{ax^3}{3} + \frac{bx^2}{2} + cx \right]_{-h}^{h} \nonumber
 \\ &= \left( \frac{ah^3}{3} + \frac{bh^2}{2} + ch \right) - \left( -\frac{ah^3}{3} + \frac{bh^2}{2} - ch \right) \nonumber
 \\ &= \frac{ah^3}{3} + \frac{ah^3}{3} + \frac{bh^2}{2} - \frac{bh^2}{2} + ch + ch \nonumber
-\\ &= \frac{2ah^3}{3} + 2ch
+\\ &= \frac{2ah^3}{3} + 2ch \nonumber
+\\ &= \frac{h}{3}(2ah^2+6c)
 \end{align}
+
+Nu skal vi finde vores 2 ubekendte, som er $2ah^2$ og $c$. Dette kan vi gøre ved at opstille tre ligninger for parablen, $y=ax^2+bx+c$, med vores tre punkter $(-h,y_0)$, $(0,y_1)$, $(h,y_2)$ fra figur \ref{fig:simpsonsmetode}, hvor vi så har 3 ubekendte. Vi går ud fra at $y$ svarer til punkternes y-koordinat og $x$ til vores x-koordinat.
+
+\begin{align}
+\label{eq:ubekendte}
+y_0 &= ah^2-bh+c & \text{Hvor} (x,y) &=(-h,y_0)
+\\ y_1 &= a \cdot 0^2+b \cdot 0 +c \Rightarrow \nonumber
+\\ y_1 &= c & \text{Hvor} (x,y) &=(0,y_1)
+\\ y_2 &= ah^2+bh+c & \text{Hvor} (x,y) &=(h,y_2)
+\end{align}
+Som man kan se på ligningen for $y_1$ \eqref{eq:ubekendte} har vi allerede fået isoleret vores $c$ værdi, som svarer til $c=y_1$
+
+%Ud fra ligning \eqref{integral-hh} kan vi lave vores parabel ved at opstille tre ligninger med 3 ubekendte, vha. vores 3 punkter: $(-h,y_0)$, $(0,y_1)$, $(h,y_2)$.
+%De tre ligninger ser således ud:
 
 \subsubsection{Opdeling i flere intervaller}
 \label{sec:simpsonopdeling}
