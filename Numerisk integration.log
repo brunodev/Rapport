@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.1.16)  28 JAN 2015 13:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.1.16)  28 JAN 2015 15:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -813,9 +813,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 266--272
  []
 
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 272.
+(babel)             in language  on input line 273.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 272.
+(babel)             in language  on input line 273.
 Package babel Info: Redefining danish shorthand "|
 (babel)             in language  on input line 275.
 Package babel Info: Redefining danish shorthand "~
@@ -826,154 +826,175 @@ Package babel Info: Redefining danish shorthand "~
 (babel)             in language  on input line 275.
 [12]
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 275.
+(babel)             in language  on input line 277.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 275.
+(babel)             in language  on input line 277.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 277.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 279.
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 299.
+(babel)             in language  on input line 300.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 299.
+(babel)             in language  on input line 300.
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 314.
+(babel)             in language  on input line 300.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 314.
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 314.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 314.
+(babel)             in language  on input line 300.
  [13]
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 328.
+(babel)             in language  on input line 302.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 328.
+(babel)             in language  on input line 302.
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 329.
+(babel)             in language  on input line 331.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 329.
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 330.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 330.
+(babel)             in language  on input line 331.
 Package babel Info: Redefining danish shorthand "|
 (babel)             in language  on input line 332.
 Package babel Info: Redefining danish shorthand "~
 (babel)             in language  on input line 332.
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 333.
+(babel)             in language  on input line 348.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 333.
+(babel)             in language  on input line 348.
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 335.
+(babel)             in language  on input line 348.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 335.
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 335.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 335.
+(babel)             in language  on input line 348.
  [14]
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 336.
+(babel)             in language  on input line 348.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 336.
+(babel)             in language  on input line 348.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 363.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 363.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 364.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 364.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 366.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 366.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 366.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 366.
+ [15pdfTeX warning (ext4): destination with the same identifier (name{table.1})
+ has been already used, duplicate ignored
 
-Underfull \hbox (badness 10000) in paragraph at lines 340--346
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.366 \clearpage
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{table.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.366 \clearpage
+                ]
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 367.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 367.
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--377
 []$\OT1/cmtt/m/n/12 http : / / www . cs . utah . edu / []zachary / computing / 
 lessons / uces-[]13 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 348--351
+Underfull \hbox (badness 10000) in paragraph at lines 379--382
 \OT1/cmr/m/n/12 http://matt.might.net/articles/rendering-mathematical-functions
 -in-
  []
 
 
-Underfull \hbox (badness 2302) in paragraph at lines 358--361
+Underfull \hbox (badness 2302) in paragraph at lines 389--392
 []\OT1/cmr/m/n/12 Undervisningsministeriet, \OT1/cmr/m/it/12 For-be-re-del-se t
 il Ma-te-ma-tik A h^^\jere tek-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 358--361
+Underfull \hbox (badness 10000) in paragraph at lines 389--392
 \OT1/cmr/m/it/12 nisk ek-sa-men 2012\OT1/cmr/m/n/12 , []$\OT1/cmtt/m/n/12 http 
 : / / uvm . dk / [] / media / UVM / Filer / Udd /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 358--361
+Underfull \hbox (badness 10000) in paragraph at lines 389--392
 \OT1/cmtt/m/n/12 Gym / PDF12 / Proever % 20og % 20eksamen / 120608 % 20Mat % 20
 A % 20htx %
  []
 
 
-Underfull \hbox (badness 3460) in paragraph at lines 367--370
+Underfull \hbox (badness 3460) in paragraph at lines 398--401
 []\OT1/cmr/m/n/12 Den Sto-re Dan-ske - Jens Clau-sen og se-ne-re af Uf-fe Ras-m
 us-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 367--370
+Underfull \hbox (badness 10000) in paragraph at lines 398--401
 \OT1/cmr/m/n/12 sen, \OT1/cmr/m/it/12 Al-go-rit-me []$\OT1/cmtt/m/n/12 http : /
  / www . denstoredanske . dk / It ,[] _teknik _ og _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 367--370
+Underfull \hbox (badness 10000) in paragraph at lines 398--401
 \OT1/cmtt/m/n/12 naturvidenskab / Informatik / Software ,[] _programmering ,[] 
 _internet _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 371--374
+Underfull \hbox (badness 10000) in paragraph at lines 402--405
 []\OT1/cmr/m/n/12 Stoimen's web log, \OT1/cmr/m/it/12 Ja-va-Script Per-for-man-
 ce: for vs.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 371--374
+Underfull \hbox (badness 10000) in paragraph at lines 402--405
 \OT1/cmr/m/it/12 whi-le []$\OT1/cmtt/m/n/12 http : / / www . stoimen . com / bl
 og / 2012 / 01 / 24 /
  []
 
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 376.
+(babel)             in language  on input line 407.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 376.
+(babel)             in language  on input line 407.
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 377.
+(babel)             in language  on input line 408.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 377.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 380.
+(babel)             in language  on input line 408.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 412.
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 380.
+(babel)             in language  on input line 412.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 380.
+(babel)             in language  on input line 412.
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 380.
+(babel)             in language  on input line 412.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 380.
-[15
+(babel)             in language  on input line 412.
+[16
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 380.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 412.
  (./Numerisk integration.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 380.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 380.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 412.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 412.
 Package rerunfilecheck Info: File `"Numerisk integration".out' has not changed.
 
 (rerunfilecheck)             Checksum: F95C9DD2241A3D4094834F6E00AE834A;1274.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 380.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 412.
  ) 
 Here is how much of TeX's memory you used:
- 8216 strings out of 494522
- 116188 string characters out of 6167205
- 273506 words of memory out of 5000000
- 11265 multiletter control sequences out of 15000+600000
+ 8225 strings out of 494522
+ 116281 string characters out of 6167205
+ 256506 words of memory out of 5000000
+ 11268 multiletter control sequences out of 15000+600000
  11804 words of font info for 43 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 31i,13n,40p,863b,1878s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 31i,13n,40p,1466b,1912s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
 0.pfb></usr/local/texlive/2014basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mbx12.pfb></usr/local/texlive/2014basic/texmf-dist/fonts/type1/public/amsfonts/
@@ -992,10 +1013,10 @@ t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014basic/texmf
 xmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2014basi
 c/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2014
 basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on "Numerisk integration.pdf" (15 pages, 282564 bytes).
+Output written on "Numerisk integration.pdf" (16 pages, 287129 bytes).
 PDF statistics:
- 404 PDF objects out of 1000 (max. 8388607)
- 358 compressed objects within 4 object streams
- 120 named destinations out of 1000 (max. 500000)
+ 417 PDF objects out of 1000 (max. 8388607)
+ 370 compressed objects within 4 object streams
+ 126 named destinations out of 1000 (max. 500000)
  181 words of extra memory for PDF output out of 10000 (max. 10000000)
 

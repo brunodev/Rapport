@@ -271,27 +271,29 @@ Når man arbejder med algoritmer, er der nogle ting, som er meget vigtige at hav
 Jeg har brugt JavaScript til at opbygge mine algoritmer for Trapezmetoden og Simpsons metode. Fordelen ved JavaScript er at det kan køre i browseren, og det er derfor forholdsvist nemt for alle at køre. Samtidig er JavaScript et af de sprog, der har en mere simpel syntaks, så det er nemt at forstå, og det er derfor også meget tilgængeligt.
 
 \subsection{Effektivitetsoptimering i JavaScript}
-Når man skal skrive en algoritme, er det næsten umuligt ikke at have et såkaldt \emph{loop}. Et loop, løkke på dansk, er en kode, der kører så længe at en defineret erklæring passer. 
+Når man skal skrive en algoritme, er det næsten umuligt ikke at have et såkaldt \emph{loop}. Et loop, løkke på dansk, er en kode, der kører så længe at en defineret erklæring passer. Den løkke jeg skal bruge til mine algoritmer, skal køre $n$ antal gange, altså den skal køre det antal gange, jeg har delt min funktion op i. I teorien kan n bevæge sig mod uendelig, men dette vil så også tage op mod uendelig tid. For at finde en 100\% præcis værdi af vores numeriske integration, kan vi godt risikere at vi kommer op på et delinterval på flere millioner. Derfor at det vigtigt at vi optimere løkken mest muligt, da det er en kode, der potentielt skal køre mange millioner gange. En måde at optimere løkken på er ved at vælge en while-løkke i stedet for en for-løkke. Et hurtigt eksperiment\footnote{\cite{forvswhile}} viser, at while-løkken i gennemsnit er en smule hurtige\footnote{Det skal nævnes at det ikke er et 100\% korrekt eksperiment, da andre processer fra computeren, kan have haft en rolle i beregningstiden. Hvis man dog fjerne de unormale resultater fra det samlede billede, er while-løkken stadig gennemsnitlig hurtigst.}. Samtidig udførte eksperimentet kun en meget simpel beregning, hvor den algoritme vi skal udregne, er meget mere avanceret. Derfor kan der være en stor besparing i tid og beregningskraft, hvis man bruger en while-løkke i stedet for en for-løkke.
+
 
 \subsection{Trapezmetoden}
 \begin{lstlisting}[caption="udregnArealTrapezmetoden()"]
 	function udregnArealTrapezmetoden(a,b,n) {
 		var h = (b-a)/n;
 		var areal;
+		funktion = document.getElementById("funktion").value;
 		
 		i = 1;
 		w = 1;
 		x = a;
 		
-		areal = eval(document.getElementById("funktion").value);
+		areal = eval(funktion);
 		while(w < n) {
 			x = x + h;
-			areal += 2*eval(document.getElementById("funktion").value);
+			areal += 2*eval(funktion);
 			w++;
 		}
 		
 		x = b;
-		areal += eval(document.getElementById("funktion").value);
+		areal += eval(funktion);
 		areal = (h/2)*areal;
 		
 		return areal;
@@ -326,9 +328,37 @@ Når man skal skrive en algoritme, er det næsten umuligt ikke at have et såkal
 	}
 }
 \end{lstlisting}
-\subsection{Analyse af nøjagtighed}
+\subsection{Analyse af nøjagtighed} 
 \subsubsection{Trapezmetoden}
+\begin{table}[H]
+	\caption {Nøjagtighed af Trapezmetoden for $f(x)=e^x$} 
+\begin{center}
+\begin{tabular}{|c|r@{.}l|r @{.} l|}
+	\hline $n$ & \multicolumn{2}{|c|}{Trapezmetoden} & \multicolumn{2}{|c|}{Bestemt integral} \\ 
+	\hline 2 & 25&89 & 19&718\\ 
+	\hline 4 & 21&334 & 19&718\\ 
+	\hline 10 & 19&98 & 19&718\\ 
+	\hline 20 & 19&738 & 19&718\\ 
+	\hline 40 & 19&734 & 19&718\\ 
+	\hline 180 & 19&718 & 19&718 \\ 
+	\hline 
+\end{tabular}
+\end{center}
+\end{table}
 \subsubsection{Simpsons metode}
+\begin{table}[H]
+	\caption {Nøjagtighed af Simpsons metode for $f(x)=e^x$} 
+	\begin{center}
+		\begin{tabular}{|c|r @{.} l|r @{.} l|}
+			\hline $n$ & \multicolumn{2}{|c|}{Simpsons metode} & \multicolumn{2}{|c|}{Bestemt integral} \\ 
+			\hline 2 & 20&884 & 19&718\\ 
+			\hline 4 & 19&815 & 19&718\\ 
+			\hline 10 & 19&72 & 19&718\\ 
+			\hline 14 & 19&718 & 19&718\\ 
+			\hline 
+		\end{tabular}
+	\end{center}
+\end{table}
 
 \section{Perspektivering}
 \section{Konklusion}
@@ -376,6 +406,7 @@ Når man skal skrive en algoritme, er det næsten umuligt ikke at have et såkal
 
 \section{Kildekritik}
 \section{Bilag}
+Her skal være regnereglerne for integralregning
 
 
 \end{document}

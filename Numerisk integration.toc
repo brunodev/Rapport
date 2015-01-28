@@ -10,12 +10,12 @@
 \contentsline {section}{\numberline {5}Numerisk integration og computere}{12}{section.5}
 \contentsline {subsection}{\numberline {5.1}Effektivitetsoptimering i JavaScript}{12}{subsection.5.1}
 \contentsline {subsection}{\numberline {5.2}Trapezmetoden}{13}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Simpsons metode}{13}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}Analyse af n\IeC {\o }jagtighed}{14}{subsection.5.4}
-\contentsline {subsubsection}{\numberline {5.4.1}Trapezmetoden}{14}{subsubsection.5.4.1}
-\contentsline {subsubsection}{\numberline {5.4.2}Simpsons metode}{14}{subsubsection.5.4.2}
-\contentsline {section}{\numberline {6}Perspektivering}{14}{section.6}
-\contentsline {section}{\numberline {7}Konklusion}{14}{section.7}
-\contentsline {section}{Litteratur}{15}{section.7}
-\contentsline {section}{\numberline {8}Kildekritik}{15}{section.8}
-\contentsline {section}{\numberline {9}Bilag}{15}{section.9}
+\contentsline {subsection}{\numberline {5.3}Simpsons metode}{14}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Analyse af n\IeC {\o }jagtighed}{15}{subsection.5.4}
+\contentsline {subsubsection}{\numberline {5.4.1}Trapezmetoden}{15}{subsubsection.5.4.1}
+\contentsline {subsubsection}{\numberline {5.4.2}Simpsons metode}{15}{subsubsection.5.4.2}
+\contentsline {section}{\numberline {6}Perspektivering}{15}{section.6}
+\contentsline {section}{\numberline {7}Konklusion}{15}{section.7}
+\contentsline {section}{Litteratur}{16}{section.7}
+\contentsline {section}{\numberline {8}Kildekritik}{16}{section.8}
+\contentsline {section}{\numberline {9}Bilag}{16}{section.9}
