@@ -254,6 +254,41 @@ Dette bliver reduceret til Simpsons metode \eqref{eq:simpsonsmetode}
 
 \section{Computeralgoritmer og numerisk integration}
 \subsection{Trapezmetoden}
+\begin{lstlisting}[language=Java, caption="Hello.javascript"]
+package com.extern;
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.util.AttributeSet;
+import android.view.View;
+
+//This class was implemented by Ankit Srivastava. Please consider acknowledging the author if it ends up being useful to you.
+
+public class Plot2D extends View {
+
+private Paint paint;
+private float[] xvalues = { 0.0f };
+private float[] yvalues = { 0.0f };
+private float maxx = 0.0f, maxy = 0.0f, minx = 0.0f, miny = 0.0f,
+locxAxis = 0.0f, locyAxis = 0.0f;
+private int vectorLength;
+private int axes = 1;
+
+public Plot2D(Context context, AttributeSet attrs) {
+super(context, attrs);
+paint = new Paint();
+}
+
+public Plot2D(Context context, AttributeSet attrs, int irgendwas) {
+super(context, attrs);
+paint = new Paint();
+}
+
+........
+
+\end{lstlisting}
 \subsection{Simpsons metode}
 \subsection{Analyse af nøjagtighed}
 \subsubsection{Trapezmetoden}
