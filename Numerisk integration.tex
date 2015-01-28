@@ -11,31 +11,41 @@
 \usepackage{hyperref}
 \usepackage{float}
 
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
- 
-\lstdefinestyle{mystyle}{
-    backgroundcolor=\color{backcolour},   
-    commentstyle=\color{codegreen},
-    keywordstyle=\color{magenta},
-    numberstyle=\tiny\color{codegray},
-    stringstyle=\color{codepurple},
-    basicstyle=\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=t,                    
-    keepspaces=true,                 
-    numbers=left,                    
-    numbersep=5pt,                  
-    showspaces=false,                
-    showstringspaces=false,
-    showtabs=false,                  
-    tabsize=2
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\lstdefinelanguage{JavaScript}{
+	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, eval, getElementById},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={class, export, boolean, throw, implements, import, this, document},
+	ndkeywordstyle=\color{darkgray}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{purple}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
 }
- 
-\lstset{style=mystyle}
+
+\lstset{
+	language=JavaScript,
+	backgroundcolor=\color{lightgray},
+	extendedchars=true,
+	basicstyle=\footnotesize\ttfamily,
+	showstringspaces=false,
+	showspaces=false,
+	numbers=left,
+	numberstyle=\footnotesize,
+	numbersep=9pt,
+	tabsize=2,
+	breaklines=true,
+	showtabs=false,
+	captionpos=t
+}
+
 \renewcommand\lstlistingname{Funktion}
 \addto{\captionsdanish}{\renewcommand{\abstractname}{Abstract}}
 \numberwithin{equation}{section}
@@ -138,6 +148,7 @@ Dette bliver reduceret til formlen for trapezmetoden \eqref{eq:trapezmetoden}
 \end{align}
 
 \section{Simpsons metode}
+\label{sec:simpsonsmetode}
 En anden metode til tilnærmelsesvist at udregne arealet under en funktion er simpsons-metoden, som virker ved at dele funktionen op i mindre parabler, man så finder arealet under. Denne metode er mere præcis end trapezmetoden\footnote{\cite[side 15]{2012matA}}, og giver derfor et resultat som oftest har en meget lille afvigelse fra det korrekte resultat, det bestemte integral.
 \subsection{Bevis for Simpsons metode}
 Simpsons metode er som nævnt, en anden metode til tilnærmelsesvist at finde det bestemte integral, selv for funktioner, hvor man ikke direkte kan bestemme det bestemte integral. Med trapezmetoden, se afsnit \ref{sec:trapezmetoden}, brugte man en ret linje fra $f(a)$ til $f(b)$ i intervallet $[a;b]$, hvilket selvfølgelig ikke er helt præcis, da en funktion ikke nødvendigvis er ret. Med Simpsons metode opdeler man intervallet $[a;b]$ i en parabel ud fra 3 punkter, $a,b,c$. Disse tre punkter kan bruges til at opstille en simplere parabel, som vi så kan regne arealet under. Parablens ligning ser således ud: $y=ax^2+bx+c$
@@ -240,55 +251,81 @@ Når n går mod uendelig bliver vores delinterval infinitesimalt lille, hvilket 
 \\\\
 For at udlede dette til formlen for Simpsons metode, skal vi kigge nærmere på formel \eqref{eq:ensimpson} og omskrive denne til at $n$ går mod uendelig.
 \begin{align}
-A	&= \frac{h}{3}(f(x)_0 + 4f(x)_1 + f(x)_2) \qquad \qquad \qquad \qquad \quad \text{Hvor } f(x)=y \text{ og } n = 2 \nonumber
-\\	&= \frac{h}{3}(f(x_0) + 4f(x_1) + f(x_2) + f(x_2) + 4f(x_3) + f(x_4)  	+ \cdots + f(x_{n-2} + 4f(x_{n-1}) + f(x_n) ) \nonumber
+A	&= \frac{h}{3}(f(x)_0 + 4f(x)_1 + f(x)_2) \qquad \qquad \qquad \qquad \quad \text{Hvor } f(x)=y \text{ og når } n = 2 \nonumber
+\\	&= \frac{h}{3}(f(x_0) + 4f(x_1) + f(x_2) + f(x_2) + 4f(x_3) + f(x_4)  	+ \cdots + f(x_{n-2}) + 4f(x_{n-1}) + f(x_n) ) \nonumber
 \end{align}
 Dette bliver reduceret til Simpsons metode \eqref{eq:simpsonsmetode}
 \begin{align}
 \label{eq:simpsonsmetode}
-\boxed{\int_{a}^{b} \approx \frac{h}{3}(f(x_0) + 4f(x_1) + 2f(x_2) + 4f(x_3) + \cdots + f(x_{n-2} + 4f(x_{n-1}) + f(x_n) )}
+\boxed{\int_{a}^{b} \approx \frac{h}{3}(f(x_0) + 4f(x_1) + 2f(x_2) + 4f(x_3) + \cdots + 2f(x_{n-2}) + 4f(x_{n-1}) + f(x_n) )}
 \\ \text{Hvor } h=\frac{b-a}{h} \text{ og $n$ er lige} \nonumber
 \end{align}
 
+\pagebreak
+\section{Numerisk integration og computere}
+Når man skal omsætte en matematisk formel, til noget computeren kan forstå og regne med, skal man lave en såkaldt \emph{algoritme}. En algoritme er en forskrift til løsning af et matematisk eller logisk problem, hvor man kender antallet af beregningsskridt\footnote{\cite{version2:algoritme}[Version2.dk]}. I dette tilfælde er forskriften de 2 udledte formler \eqref{eq:trapezmetoden}, trapezmetoden, og \eqref{eq:simpsonsmetode}, Simpsons metode, fra afsnit \ref{sec:trapezmetoden} og \ref{sec:simpsonsmetode}, der tilnærmelsesvist bestemmer det bestemte integral. Samtidig kender vi også antallet af beregningsskridt, da dette er antallet af delintervaller $n$. Derfor kan vi med sikkerhed sige, at vi kan lave en algoritme der tilnærmelsesvist udregner arealet under en vilkårlig matematisk funktion.
+Når man skal skrive en algoritme til en computer, skal dette gøres i et programmeringssprog\footnote{\cite{denstoredanske:algoritme}[Den store danske]}, som f.eks. JavaScript, PHP, C++, java osv. Hvert sprog kan bruges til forskellige ting og på forskellige enheder. Nogle programmeringssprog bruges til regulære computerprogrammer mens andre er udviklet til at fungere i en webbrowser som Chrome, Internet Explorer og lignende.
+\\
+Når man arbejder med algoritmer, er der nogle ting, som er meget vigtige at have styr på. Det ene er selvfølgelig at algoritmen giver et korrekt resultat, altså at den er nøjagtig, og det andet er hvor lang tid algoritmen bruger på udregningerne. Der skal være en fin balance mellem nøjagtigheden og effektiviteten. Nogle gange er det meget vigtigt at algoritmen er 100\% nøjatig, mens at andre algoritmer er så avancerede, at en 100\% nøjagtighed tager for lang tid. Nogle algoritmer kan være så komplekse og kræve så store beregningsmæssige ressourcer, at de ikke kan løses med de computere, vi har adgang til i dag.
+\\\\
+Jeg har brugt JavaScript til at opbygge mine algoritmer for Trapezmetoden og Simpsons metode. Fordelen ved JavaScript er at det kan køre i browseren, og det er derfor forholdsvist nemt for alle at køre. Samtidig er JavaScript et af de sprog, der har en mere simpel syntaks, så det er nemt at forstå, og det er derfor også meget tilgængeligt.
 
-\section{Computeralgoritmer og numerisk integration}
+\subsection{Effektivitetsoptimering i JavaScript}
+Når man skal skrive en algoritme, er det næsten umuligt ikke at have et såkaldt \emph{loop}. Et loop, løkke på dansk, er en kode, der kører så længe at en defineret erklæring passer. 
+
 \subsection{Trapezmetoden}
-\begin{lstlisting}[language=Java, caption="Hello.javascript"]
-package com.extern;
-
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.util.AttributeSet;
-import android.view.View;
-
-//This class was implemented by Ankit Srivastava. Please consider acknowledging the author if it ends up being useful to you.
-
-public class Plot2D extends View {
-
-private Paint paint;
-private float[] xvalues = { 0.0f };
-private float[] yvalues = { 0.0f };
-private float maxx = 0.0f, maxy = 0.0f, minx = 0.0f, miny = 0.0f,
-locxAxis = 0.0f, locyAxis = 0.0f;
-private int vectorLength;
-private int axes = 1;
-
-public Plot2D(Context context, AttributeSet attrs) {
-super(context, attrs);
-paint = new Paint();
-}
-
-public Plot2D(Context context, AttributeSet attrs, int irgendwas) {
-super(context, attrs);
-paint = new Paint();
-}
-
-........
-
+\begin{lstlisting}[caption="udregnArealTrapezmetoden()"]
+	function udregnArealTrapezmetoden(a,b,n) {
+		var h = (b-a)/n;
+		var areal;
+		
+		i = 1;
+		w = 1;
+		x = a;
+		
+		areal = eval(document.getElementById("funktion").value);
+		while(w < n) {
+			x = x + h;
+			areal += 2*eval(document.getElementById("funktion").value);
+			w++;
+		}
+		
+		x = b;
+		areal += eval(document.getElementById("funktion").value);
+		areal = (h/2)*areal;
+		
+		return areal;
+	}
 \end{lstlisting}
 \subsection{Simpsons metode}
+\begin{lstlisting}[caption="udregnArealSimpsonsMetode()"]
+	function udregnArealSimpsonsMetode(a,b,n) {
+		var h = (b-a)/n;
+		var areal;
+		
+		i = 1;
+		w = 1;
+		x = a;
+		
+		areal = eval(document.getElementById("funktion").value);
+		while(w < n) {
+			x = x +h;
+			if(w%2 == 0)
+				areal += 2*eval(document.getElementById("funktion").value);
+			else
+				areal += 4*eval(document.getElementById("funktion").value);
+			
+			w++;
+		}
+		
+		x = b;
+		areal += eval(document.getElementById("funktion").value);
+		areal = (h/3)*areal;
+		
+		return areal;
+	}
+}
+\end{lstlisting}
 \subsection{Analyse af nøjagtighed}
 \subsubsection{Trapezmetoden}
 \subsubsection{Simpsons metode}
@@ -317,11 +354,24 @@ paint = new Paint();
 	Aalborg Universitet,
 	\emph{Et foredag fra Aalborg Universitet omhandlende Numerisk Integration}.\\
 	http://staff.iha.dk/jse/bioproces/Forelaesningsnoter/BI1MAT1/\\Numeriske\%20metoder\%201.pdf
+	
 \bibitem{2012matA}
 	Undervisningsministeriet,
 	\emph{Forberedelse til Matematik A højere teknisk eksamen 2012},
 	\url{http://uvm.dk/~/media/UVM/Filer/Udd/Gym/PDF12/Proever\%20og\%20eksamen/120608\%20Mat\%20A\%20htx\%20Forberedelsesmateriale.pdf}
-
+	
+\bibitem{version2:algoritme}
+	Version2.dk - Klaus Hansen og Casper Thomsen,
+	\emph{Leksikon: Algoritme},
+	\url{http://www.version2.dk/leksikon/Algoritme}
+\bibitem{denstoredanske:algoritme}
+	Den Store Danske - Jens Clausen og senere af Uffe Rasmussen,
+	\emph{Algoritme}
+	\url{http://www.denstoredanske.dk/It,_teknik_og_naturvidenskab/Informatik/Software,_programmering,_internet_og_webkommunikation/algoritme}
+\bibitem{forvswhile}
+	Stoimen's web log,
+	\emph{JavaScript Performance: for vs. while}
+	\url{http://www.stoimen.com/blog/2012/01/24/javascript-performance-for-vs-while/}
 \end{thebibliography}
 
 \section{Kildekritik}

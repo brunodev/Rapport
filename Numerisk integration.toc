@@ -7,14 +7,15 @@
 \contentsline {section}{\numberline {4}Simpsons metode}{6}{section.4}
 \contentsline {subsection}{\numberline {4.1}Bevis for Simpsons metode}{7}{subsection.4.1}
 \contentsline {subsubsection}{\numberline {4.1.1}Opdeling i flere delintervaller}{9}{subsubsection.4.1.1}
-\contentsline {section}{\numberline {5}Computeralgoritmer og numerisk integration}{11}{section.5}
-\contentsline {subsection}{\numberline {5.1}Trapezmetoden}{11}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Simpsons metode}{13}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Analyse af n\IeC {\o }jagtighed}{13}{subsection.5.3}
-\contentsline {subsubsection}{\numberline {5.3.1}Trapezmetoden}{13}{subsubsection.5.3.1}
-\contentsline {subsubsection}{\numberline {5.3.2}Simpsons metode}{13}{subsubsection.5.3.2}
-\contentsline {section}{\numberline {6}Perspektivering}{13}{section.6}
-\contentsline {section}{\numberline {7}Konklusion}{13}{section.7}
-\contentsline {section}{Litteratur}{14}{section.7}
-\contentsline {section}{\numberline {8}Kildekritik}{14}{section.8}
-\contentsline {section}{\numberline {9}Bilag}{14}{section.9}
+\contentsline {section}{\numberline {5}Numerisk integration og computere}{12}{section.5}
+\contentsline {subsection}{\numberline {5.1}Effektivitetsoptimering i JavaScript}{12}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Trapezmetoden}{13}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Simpsons metode}{13}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Analyse af n\IeC {\o }jagtighed}{14}{subsection.5.4}
+\contentsline {subsubsection}{\numberline {5.4.1}Trapezmetoden}{14}{subsubsection.5.4.1}
+\contentsline {subsubsection}{\numberline {5.4.2}Simpsons metode}{14}{subsubsection.5.4.2}
+\contentsline {section}{\numberline {6}Perspektivering}{14}{section.6}
+\contentsline {section}{\numberline {7}Konklusion}{14}{section.7}
+\contentsline {section}{Litteratur}{15}{section.7}
+\contentsline {section}{\numberline {8}Kildekritik}{15}{section.8}
+\contentsline {section}{\numberline {9}Bilag}{15}{section.9}
