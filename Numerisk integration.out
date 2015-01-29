@@ -8,13 +8,14 @@
 \BOOKMARK [3][-]{subsubsection.4.1.1}{Opdeling i flere delintervaller}{subsection.4.1}% 8
 \BOOKMARK [1][-]{section.5}{Numerisk integration og computere}{}% 9
 \BOOKMARK [2][-]{subsection.5.1}{Effektivitetsoptimering i JavaScript}{section.5}% 10
-\BOOKMARK [2][-]{subsection.5.2}{Trapezmetoden}{section.5}% 11
-\BOOKMARK [2][-]{subsection.5.3}{Simpsons metode}{section.5}% 12
-\BOOKMARK [2][-]{subsection.5.4}{Analyse af n\370jagtighed}{section.5}% 13
-\BOOKMARK [3][-]{subsubsection.5.4.1}{Trapezmetoden}{subsection.5.4}% 14
-\BOOKMARK [3][-]{subsubsection.5.4.2}{Simpsons metode}{subsection.5.4}% 15
-\BOOKMARK [1][-]{section.6}{Perspektivering}{}% 16
-\BOOKMARK [1][-]{section.7}{Konklusion}{}% 17
-\BOOKMARK [1][-]{section.7}{Litteratur}{}% 18
-\BOOKMARK [1][-]{section.8}{Kildekritik}{}% 19
-\BOOKMARK [1][-]{section.9}{Bilag}{}% 20
+\BOOKMARK [2][-]{subsection.5.2}{Opbygning af algoritmerne}{section.5}% 11
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Trapezmetoden}{subsection.5.2}% 12
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Simpsons metode}{subsection.5.2}% 13
+\BOOKMARK [2][-]{subsection.5.3}{Analyse af n\370jagtighed}{section.5}% 14
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Trapezmetoden}{subsection.5.3}% 15
+\BOOKMARK [3][-]{subsubsection.5.3.2}{Simpsons metode}{subsection.5.3}% 16
+\BOOKMARK [1][-]{section.6}{Perspektivering}{}% 17
+\BOOKMARK [1][-]{section.7}{Konklusion}{}% 18
+\BOOKMARK [1][-]{section.7}{Litteratur}{}% 19
+\BOOKMARK [1][-]{section.8}{Kildekritik}{}% 20
+\BOOKMARK [1][-]{section.9}{Bilag}{}% 21
