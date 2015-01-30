@@ -50,6 +50,9 @@
 \renewcommand\lstlistingname{Algoritme}
 \addto{\captionsdanish}{\renewcommand{\abstractname}{Abstract}}
 \numberwithin{equation}{section}
+\addto{\captionsbahasa}{%
+	\renewcommand*{\refname}{Daftar Pustaka}
+}
 
 \pagestyle{headings}
 
@@ -69,11 +72,12 @@ Compare the typeset output side-by-side with the input document.smøøre
 \tableofcontents
 \newpage
 \section{Indledning}
-
+Når man skal bestemme arealet under en funktion, kan man finde det bestemte integral. Men for nogle funktioner er det ikke muligt at bestemme det bestemte integral. I dette tilfælde kan man bruge numerisk integration til tilnærmelsesvist at bestemme arealet under funktionen. I dette projekt vil jeg kort forklare hvad der menes med numerisk integration, og følgende redegøre for numerisk integration ved hjælp af Trapezmetoden og Simpsons metode. Efterfølgende vil jeg redegøre for, hvorledes metoderne kan omsættes til et IT-program og vurdere effektiviteten og nøjagtigheden af metoderne.
+\\
+Jeg vil redegøre for både Trapezmetoden og Simpsons metode, ved at udlede og bevise deres formler, og senere vise at de også kan beregne arealet under en funktion, der ikke direkte kan integreres. Jeg vil vurdere effektiviteten og nøjagtigheden af metoderne, ved først at omsætte dem til en algoritme, og herefter indsamle data vedrørende nøjagtighed og effektivitet. Jeg vil undersøge hvor lang beregningstiden er for hver funktion og sætte dem op mod hinanden. Jeg vil også undersøge nøjagtigheden for metoderne og tilhørende algoritme, ved at sammenligne med det bestemte integral.
 
 \section{Forklaring af numerisk integration}
 Numerisk integration kan også kaldes for tilnærmelsesvist bestemmelse af det bestemte integral $\int_{a}^{b}f(x)dx$.\footnote{\cite{numeriskintegration}} Normalt bruger man bestemte integraler til dette, men når funktionen er så avanceret, som f.eks. $f(x)=e^{-x^2}$, er det ikke muligt at bruge bestemt integration til at finde arealet.\footnote{\cite{2012matA}} Numerisk integration opdeler funktionen i mindre stykker, og udregner herefter arealet af stykkerne og finder summen. Der findes flere forskellige metoder til at udregne arealet. Blandt dem kan nævnes Midpunktsreglen, Trapezmetoden og Simpsons metode. Trapezmetoden og Simpsons metode, er de 2 der som regel er mest præcise, men det er selvfølgelig også de mest avancerede.
-
 
 \section{Trapezmetoden}
 \label{sec:trapezmetoden}
@@ -445,7 +449,8 @@ Alt i alt kan man med sikkerhed sige, at Simpsons metode både er den mest nøja
 I denne opgave har jeg kort forklaret om numerisk integration og redegjort for de to numeriske metoder Trapezmetoden og Simpsons metode. Derudover har jeg omsat metoderne til en computer algoritme, hvor jeg har vurderet effektiviteten og nøjagtigheden af både metoden og algoritmen.
 
 \clearpage
-\addcontentsline{toc}{section}{Litteratur}
+%\addcontentsline{toc}{section}{Litteratur}
+\section{Litteraturliste}
 \begin{thebibliography}{9}
 \bibitem{numeriskintegration}
 	Den Store Danske - Mogens Esrom Larsen,
@@ -480,6 +485,11 @@ I denne opgave har jeg kort forklaret om numerisk integration og redegjort for d
 \end{thebibliography}
 
 \section{Kildekritik}
+Når man skriver faglige projekter som dette, baseret på fakta, er man nødt til at have pålidelige og korrekte kilder. Derfor er kildekritik en essentiel del af det at skrive skriftlige opgaver. 
+De kilder jeg har anvendt, har hovedsageligt være leksika-internetsider, hvor kilderne er så troværdige som muligt. Her snakker jeg om Den store danske, som bliver udgivet af Gyldendals. Den store danske er, modsat f.eks. Wikipedia, en leksikon side hvor brugerne ikke selv kan rette i indholdet, og dermed bliver vedligeholdt af udvalgt personale fra Gyldendals, hvilke sikrer korrekte data. 
+Jeg har også benyttet mig af et professoroplæg, omhandlende det skrå kast, som er bygget op således at det kan anvendes som baggrund til et studieprojekt. Kilden har derfor været meget relevant for mit projekt, og har samtidigt en høj troværdighed, grundet forfatterens profession. Dog har jeg dobbelttjekket de vigtigste data, for at være helt sikker, og jeg har derfor stor tiltro til kilden. 
+Kilderne fra Nasa er også meget troværdige kilder, da internet siderne for det første er skrevet af Nasa og for det andet ligger på et specielt domæne (.gov), der er reserveret til regeringen i USA. Dette betyder at både Nasa og USA ligger navn til kilden, hvilket gør den sikker.  
+På trods af at det har været svært at finde relevante bøger, har jeg så vidt muligt forsøgt at holde til bøger som første informationskilde. Dette er da bøger generelt har en højere troværdighed en hjemmesider, da de kræver mere at producere, og ikke bare kan ændres efter publikation. Ved oven i at vælge bøger som bruges i undervisningen, er bøgerne også blevet godkendt af undervisningsministeriet, hvilket må betyde at deres indhold er yderst kvalificeret.
 \section{Bilag}
 \subsection{Bilag 1 - Regneregler for integralregning}
 \begin{center}
