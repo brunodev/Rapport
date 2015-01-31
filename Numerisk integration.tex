@@ -8,7 +8,7 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage[utf8]{inputenc}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{float}
 \usepackage[margin=1.3in]{geometry}
 
@@ -54,7 +54,7 @@
 	\renewcommand*{\refname}{}
 }
 
-\pagestyle{headings}
+%\pagestyle{headings}
 
 \begin{document}
 \title{Numerisk Integration}
@@ -77,14 +77,14 @@ Når man skal bestemme arealet under en funktion, kan man finde det bestemte int
 Jeg vil redegøre for både Trapezmetoden og Simpsons metode, ved at udlede og bevise deres formler, og senere vise at de også kan beregne arealet under en funktion, der ikke direkte kan integreres. Jeg vil vurdere effektiviteten og nøjagtigheden af metoderne, ved først at omsætte dem til en algoritme, og herefter indsamle data vedrørende nøjagtighed og effektivitet. Jeg vil undersøge hvor lang beregningstiden er for hver funktion og sætte dem op mod hinanden. Jeg vil også undersøge nøjagtigheden for metoderne og tilhørende algoritme, ved at sammenligne med det bestemte integral.
 
 \section{Forklaring af numerisk integration}
-Numerisk integration kan også kaldes for tilnærmelsesvist bestemmelse af det bestemte integral $\int_{a}^{b}f(x)dx$.\footnote{\cite{numeriskintegration}} Normalt bruger man bestemte integraler til dette, men når funktionen er så avanceret, som f.eks. $f(x)=e^{-x^2}$, er det ikke muligt at bruge bestemt integration til at finde arealet.\footnote{\cite{2012matA}} Numerisk integration opdeler funktionen i mindre stykker, og udregner herefter arealet af stykkerne og finder summen. Der findes flere forskellige metoder til at udregne arealet. Blandt dem kan nævnes Midpunktsreglen, Trapezmetoden og Simpsons metode. Trapezmetoden og Simpsons metode, er de 2 der som regel er mest præcise, men det er selvfølgelig også de mest avancerede.
+Numerisk integration kan også kaldes for tilnærmelsesvist bestemmelse af det bestemte integral $\int_{a}^{b}f(x)dx$.\footnote{\cite{numeriskintegration}} Normalt bruger man bestemte integraler til dette, men når funktionen er så avanceret, som f.eks. $f(x)=e^{-x^2}$, er det ikke muligt at bruge bestemt integration til at finde arealet.\footnote{\cite{2012matA}} Numerisk integration opdeler funktionen i mindre stykker, og udregner herefter arealet af stykkerne og finder summen. Der findes flere forskellige metoder til at udregne arealet. Blandt dem kan nævnes Middelsum, Trapezmetoden og Simpsons metode. Trapezmetoden og Simpsons metode er de 2, der som regel er mest præcise, men det er selvfølgelig også de mest avancerede.
 
 \section{Trapezmetoden}
 \label{sec:trapezmetoden}
-Trapezmetoden er en af flere metoder til at finde areal under en funktion. Det er en af de mere præcise metoder, da den, i modsætning til højre-, venstre- og middelsum, laver en trapez og ikke en firkant.
+Trapezmetoden er en af flere metoder til at finde arealet under en funktion. Det er en af de mere præcise metoder, da den, i modsætning til højre-, venstre- og middelsum, laver en trapez og ikke en firkant.
 \subsection{Bevis for trapezmetoden}
 Ved at bruge trapezmetoden kan vi tilnærmelsesvist finde det bestemte integral, selv for funktioner, hvor man ikke direkte kan bestemme det bestemte integral.\footnote{\cite[s. 13]{2012matA}} Et eksempel på dette er funktionen $f(x)=e^{-x^{2}}$.\footnote{\cite[s. 12]{2012matA}}
-For at bestemme arealet under en funktion vil vi gerne nærme os det bestemte integral.
+For at bestemme arealet under en funktion vil vi gerne nærme os det bestemte integral:
 \begin{equation}
 \int_{a}^{b}f(x)dx \nonumber
 \end{equation}
@@ -110,9 +110,9 @@ A=\frac{1}{2}h\cdot(a+b)
 	\label{fig:trapez}
 \end{figure}
 
-Som man kan se på figur \ref{fig:trapez}, er $a$ og $b$ er sidelænger og $h$ er højden. I et trapez er højden defineret som afstanden mellem de to parallelle linjestykker, i dette tilfælde $a$ og $b$, som man kan se illustreret på figur \ref{fig:trapez}
+Som man kan se på figur \ref{fig:trapez}, er $a$ og $b$ sidelængder og $h$ er højden. I et trapez er højden defineret som afstanden mellem de to parallelle linjestykker, i dette tilfælde $a$ og $b$, som man kan se illustreret på figur \ref{fig:trapez}
 \\\\
-Som man kan se på figur \ref{fig:trapez} svarer højden $h$ til afstanden mellem $a$ og $b$, som svarer til $h=b-a$. Når man indsætter henholdsvis $a$ og $b$ værdien ind i vores $f(x)$ funktion, får vi vores $y$ værdi, som svarer til længden af henholdsvis $a$ og $b$.
+Som man kan se på figur \ref{fig:trapez} svarer højden $h$ til afstanden mellem $a$ og $b$, som svarer til $h=b-a$. Når man indsætter henholdsvis $a$ og $b$ værdierne ind i $f(x)$ funktion, får vi vores $y$ værdi, som svarer til længden af henholdsvis $a$ og $b$.
 Hvis vi indsætter dette i arealet for en trapez, får vi derfor:
 \begin{align}
 A &= \frac{1}{2}h\cdot(a+b) &\Rightarrow \nonumber
@@ -120,28 +120,29 @@ A &= \frac{1}{2}h\cdot(a+b) &\Rightarrow \nonumber
 \\ &= \frac{b-a}{2} (a+b) &\Rightarrow \nonumber
 \intertext{i stedet for $a$ og $b$ indsættes højderne på trapezens sider, $f(a)$ og $f(b)$} \nonumber
 \\ &= \frac{b-a}{2} (f(a)+f(b))
-\\ \intertext{Arealet af denne trapez svarer tilnærmelsesvist til arealet under funktionen. Så derfor kan vi sige at arealet af trapezen tilnærmelsesvist svarer til værdien af det bestemte integral:} \nonumber
+\\ \intertext{Arealet af denne trapez svarer tilnærmelsesvist til arealet under funktionen. Så derfor kan vi sige, at arealet af trapezen tilnærmelsesvist svarer til værdien af det bestemte integral:} \nonumber
 \\ \int_{a}^{b}f(x) &\approx \frac{b-a}{2} (f(a)+f(b))
 \end{align}
 
 \subsubsection{Opdeling i flere delintervaller}
 \label{sec:opdelingtrapezmetoden}
-Som man kan se på figur \ref{fig:trapezmetoden} er trapezmetoden meget upræcis i forhold til det bestemte integral. Dette kan man forbedre ved at dele intervallet $[a;b]$ op i flere delintervaller, $n$. Dvs. at vi deler vores funktion op i mindre intervaller, som vi så finder arealet af med trapezmetoden. Disse delintervaller kalder vi for $x_0, x_1, \cdots x_n$. Vi skal bruge højden på trapezen, som er længden af delintervallet $x_0 - x_1$. I dette tilfælde svarer det til:
+Som man kan se på figur \ref{fig:trapezmetoden} er trapezmetoden meget upræcis i forhold til det bestemte integral. Dette kan man forbedre ved at dele intervallet $[a;b]$ op i flere delintervaller, $n$. Dvs. at vi deler vores funktion op i mindre intervaller, som vi så finder arealet af med trapezmetoden. Disse delintervaller kalder vi for $x_0, x_1, \cdots x_n$. Vi skal bruge højden på trapezen, som er længden af delintervallet fra $x_0$ til $x_1$. I dette tilfælde svarer det til:
 \begin{align}
 h = x_1-x_0 = x_2-x_1 = \cdots = x_n - x_{n-1}
 \end{align}
-Ud fra dette kan vi bestemme at højden, $h$, må svare til intervallet $[a;b]$ opdelt i $n$ intervaller:
+Ud fra dette kan vi bestemme at højden $h$, må svare til intervallet $[a;b]$ opdelt i $n$ intervaller:
 \begin{align}
 h=\frac{b-a}{n}
 \end{align}
 Det samlede areal under funktionen kan betegnes som summen af alle delintervallerne:
 \begin{align}
+\label{eq:sumtrapezmetoden}
 A &= \lim\limits_{n \rightarrow \infty} \sum_{i=1}^{n} \frac{h}{2}(f(x_{i}) + f(x_{i+1}))
 \approx \int_{a}^{b}f(x) &\text{hvor }h=\frac{b-a}{n}
 \end{align}
 Når n går mod uendelig bliver vores delinterval infinitesimalt lille, hvilket vil sige at summen af alle trapezarealerne nærmer sig det bestemte integral. Det bestemte integral svarer faktisk til at vi deler arealet op i uendelige små og uendelig mange led.
 \\\\
-For at udlede dette til formlen for trapezmetoden bliver vi nødt til at opskrive dette på en lidt anden måde.
+For at udlede dette til formlen for trapezmetoden bliver vi nødt til at opskrive formel \eqref{eq:sumtrapezmetoden} på en lidt anden måde.
 \begin{align}
 A &= \frac{h}{2}(f(x_0)+ f(x_1)) + \frac{h}{2}(f(x_1)+ f(x_2)) + \cdots + \frac{h}{2}(f(x_{n-1})+ f(x_n)) \nonumber
 \\ &= h(\frac{1}{2}f(x_0) + \frac{1}{2}f(x_1)) + h(\frac{1}{2}f(x_1) + \frac{1}{2}f(x_2)) + \cdots + h(\frac{1}{2}f(x_{n-1}) + \frac{1}{2}f(x_n)) \nonumber
@@ -155,9 +156,9 @@ Dette bliver reduceret til formlen for trapezmetoden\footnote{\cite[s. 14]{2012m
 
 \section{Simpsons metode}
 \label{sec:simpsonsmetode}
-En anden metode til tilnærmelsesvist at udregne arealet under en funktion er simpsons-metoden, som virker ved at dele funktionen op i mindre parabler, man så finder arealet under. Denne metode er mere præcis end trapezmetoden\footnote{\cite[s. 15]{2012matA}}, og giver derfor et resultat som oftest har en meget lille afvigelse fra det korrekte resultat, det bestemte integral.
+En anden metode til tilnærmelsesvist at udregne arealet under en funktion er Simpsons metode, som virker ved at dele funktionen op i mindre parabler, man så finder arealet under. Denne metode er mere præcis end trapezmetoden\footnote{\cite[s. 15]{2012matA}}, og giver derfor et resultat som oftest har en meget lille afvigelse fra det korrekte resultat, det bestemte integral.
 \subsection{Bevis for Simpsons metode}
-Simpsons metode er som nævnt, en anden metode til tilnærmelsesvist at finde det bestemte integral, selv for funktioner, hvor man ikke direkte kan bestemme det bestemte integral. Med trapezmetoden, se afsnit \ref{sec:trapezmetoden}, brugte man en ret linje fra $f(a)$ til $f(b)$ i intervallet $[a;b]$, hvilket selvfølgelig ikke er helt præcis, da en funktion ikke nødvendigvis er ret. Med Simpsons metode opdeler man intervallet $[a;b]$ i en parabel ud fra 3 punkter, $a,b,c$.\footnote{\cite{simpsonsmetode}} Disse tre punkter kan bruges til at opstille en simplere parabel, som vi så kan regne arealet under. Parablens ligning ser således ud: $y=ax^2+bx+c$
+Simpsons metode er som nævnt, en anden metode til tilnærmelsesvist at finde det bestemte integral, selv for funktioner, hvor man ikke direkte kan bestemme det bestemte integral. Med trapezmetoden, se afsnit \ref{sec:trapezmetoden}, brugte man en ret linje fra $f(a)$ til $f(b)$ i intervallet $[a;b]$, hvilket selvfølgelig ikke er helt præcist, da en funktion ikke nødvendigvis er ret. Med Simpsons metode opdeler man intervallet $[a;b]$ i en parabel ud fra 3 punkter, $a,b,c$.\footnote{\cite{simpsonsmetode}} Disse tre punkter kan bruges til at opstille en simplere parabel, som vi så kan regne arealet under. Parablens ligning ser således ud: $y=ax^2+bx+c$
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.6\linewidth]{Billeder/Simpsonsmetode}
@@ -165,13 +166,13 @@ Simpsons metode er som nævnt, en anden metode til tilnærmelsesvist at finde de
 \label{fig:simpsonsmetode}
 \end{figure}
 
-Figur \ref{fig:simpsonsmetode} viser hvilke punkter vores parabel går gennem når vi har intervallet $[a;b]$. Ligesom med trapezmetoden kan man opdele funktionen i $n$ antal dele. Til at starte med går vi ud fra at $n=2$, for at gøre det nemt. \emph{I afsnit \ref{sec:simpsonopdeling} bliver der viderebygget på Simpsons metode med flere intervaller.}
+Figur \ref{fig:simpsonsmetode} viser hvilke punkter vores parabel går gennem, når vi har intervallet $[a;b]$. Ligesom med trapezmetoden kan man opdele funktionen i $n$ antal dele. Til at starte med går vi ud fra at $n=2$, for at gøre det nemt. \emph{I afsnit \ref{sec:simpsonopdeling} bliver der viderebygget på Simpsons metode med flere intervaller.}
 Som man også kan se på figuren bliver $[a;b]$ delt op i to, hvor $\triangle x=h$. Dette viser sig også i punkterne som henholdsvis er $(-h,y_0)$, $(0,y_1)$ og $(h,y_2)$. Intervallet $[a;b]$ opdeles i $n$ antal delintervaller, som for dette tilfælde er 2, hvilket giver afstanden h mellem vores punkter.
 \begin{align}
 h &= \frac{b-a}{n} \nonumber
 \\&= \frac{b-a}{2} &\text{Når } n=2
 \end{align}
-Vi ved at vores parabel går fra $-h$ til $h$ og at den har forskriften $y=ax^2+bx+c$. Dette simple udtryk for vores parabel kan vi bestemme det bestemte integral af, da vi ved at $f(x)=y$. Vi finder dermed det bestemte integral under en parabel med forskriften $y=ax^2+bx+c$ fra $-h$ til $h$\footnote{Der er brugt regneregler for integralregning til at finde det bestemte integral for funktionen, som kan ses i bilag 1}
+Vi ved at vores parabel går fra $-h$ til $h$, og at den har forskriften $y=ax^2+bx+c$. Dette simple udtryk for vores parabel kan vi bestemme det bestemte integral af, da vi ved at $f(x)=y$. Vi finder dermed det bestemte integral under en parabel med forskriften $y=ax^2+bx+c$ fra $-h$ til $h$\footnote{Der er brugt regneregler for integralregning til at finde det bestemte integral for funktionen, som kan ses i bilag 1}
 \begin{align}
 \label{eq:integral-hh}
 A &=\int_{-h}^{h}f(x)dx \nonumber
@@ -229,7 +230,7 @@ A &= \frac{h}{3}(2ah^2+6c) \nonumber
 %De tre ligninger ser således ud:
 
 \subsubsection{Opdeling i flere delintervaller}
-Når vi deler vores interval op i flere delintervaller, dvs. at $n$ bliver større, kan vi finde summen af $n$ antal delintervaller mellem $[a;b]$.\footnote{\cite[s. 15-16]{2012matA}} Vi skal bruge 2 delintervaller for at finde vores parabel, og derfor skal $n$ være lige.\footnote{\cite[s. 15-16]{2012matA}} På figur \ref{fig:simpsonOpdeling} kan man se et eksempel på en opdeling med $n=4$, hvor vi faktisk har 2 parabler. En fra $y_0$ til $y_2$ gennem $y_1$ og en fra $y_2$ til $y_4$ gennem $y_3$.
+Når vi deler vores interval op i flere delintervaller, dvs. at $n$ bliver større, kan vi finde summen af $n$ antal delintervaller mellem $[a;b]$.\footnote{\cite[s. 15-16]{2012matA}} Vi skal bruge 2 delintervaller per parabel, da parablen dannes over 3 punkter, og derfor skal $n$ være lige.\footnote{\cite[s. 15-16]{2012matA}} På figur \ref{fig:simpsonOpdeling} kan man se et eksempel på en opdeling med $n=4$, hvor vi faktisk har 2 parabler. En fra $y_0$ til $y_2$ gennem $y_1$ og en fra $y_2$ til $y_4$ gennem $y_3$.
 \label{sec:simpsonopdeling}
 \begin{figure}[H]
 \centering
@@ -238,8 +239,8 @@ Når vi deler vores interval op i flere delintervaller, dvs. at $n$ bliver stør
 \label{fig:simpsonOpdeling}
 \end{figure}
 
-Ved hjælp af formel \eqref{eq:ensimpson} kan vi udregne arealet af en parabel fra $y_0$ til $y_2$. Men hvis vi udvider denne som man kan se på figur \ref{fig:simpsonOpdeling}, kan vi fortsætte simpsonsreglen fra $y_2$ til $y_4$, og dermed få det samlede areal for $[a;b]$ som går fra $y_0$ til $y_4$, som man kan se på figur \ref{fig:simpsonOpdeling}.
-Summen af arealet fra $[a;b]$ når opdelingen $n=4$
+Ved hjælp af formel \eqref{eq:ensimpson} kan vi udregne arealet af en parabel fra $y_0$ til $y_2$. Men hvis vi udvider denne som man kan se på figur \ref{fig:simpsonOpdeling}, kan vi fortsætte Simpsons metode fra $y_2$ til $y_4$, og dermed få det samlede areal for $[a;b]$ som går fra $y_0$ til $y_4$, som man kan se på figur \ref{fig:simpsonOpdeling}.
+Summen af arealet fra $[a;b]$ når opdelingen $n=4$:
 \begin{align}
 \label{eq:simpsonOpdeling}
 A_{[a;b]} 	&= \frac{h}{3}(y_0 + 4y_1 + y_2) + \frac{h}{3}(y_2 + 4y_3 + y_4) \nonumber
@@ -249,11 +250,11 @@ A_{[a;b]} 	&= \frac{h}{3}(y_0 + 4y_1 + y_2) + \frac{h}{3}(y_2 + 4y_3 + y_4) \non
 A_{[a;b]}	&= \frac{h}{3}(y_0 + 4y_1 + 2y_2 + 4y_3 + 2y_4 + 4y_5 + y_6) & \text{Når } n=6
 \label{eq:simpsonOpdeling6}
 \end{align}
-Ud fra dette kan vi opstille en ligning der siger at summen af alle delarealerne i intervallet $[a;b]$ opdelt i $n$ delintervaller tilnærmelsesvist må svare til det bestemte integral.
+Ud fra dette kan vi opstille en ligning der siger at summen af alle delarealerne i intervallet $[a;b]$, opdelt i $n$ delintervaller tilnærmelsesvist må svare til det bestemte integral.
 \begin{align}
 A &= \lim\limits_{n \rightarrow \infty} \sum_{i=1}^{n/2} \frac{h}{3}(y_{i-2} + 4y_{i-1} + y_{i}) \approx \int_{a}^{b}f(x) &\text{hvor }h=\frac{b-a}{n}
 \end{align}
-Når n går mod uendelig bliver vores delinterval infinitesimalt lille, hvilket vil sige at summen af alle vores delintervaller, hvor vi har udregnet arealet under parablen. På den måde nærmer det, vha. Simpsons metode, udregnede areal tilnærmelsesvist det bestemte integral.
+Når $n$ går mod uendelig bliver vores delinterval infinitesimalt lille, hvilket vil sige at summen af alle vores delintervaller, hvor vi har udregnet arealet under parablen. På den måde nærmer det. vha. Simpsons metode udregnede areal tilnærmelsesvist det bestemte integral.
 \\\\
 For at udlede dette til formlen for Simpsons metode, skal vi kigge nærmere på formel \eqref{eq:ensimpson} og omskrive denne til at $n$ går mod uendelig.
 \begin{align}
@@ -269,15 +270,16 @@ Dette bliver reduceret til Simpsons metode\footnote{\cite[s. 16]{2012matA}} \eqr
 
 \pagebreak
 \section{Numerisk integration og computere}
-Når man skal omsætte en matematisk formel, til noget computeren kan forstå og regne med, skal man lave en såkaldt \emph{algoritme}. En algoritme er en forskrift til løsning af et matematisk eller logisk problem, hvor man kender antallet af beregningsskridt\footnote{\cite{version2:algoritme}[Version2.dk]}. I dette tilfælde er forskriften de 2 udledte formler \eqref{eq:trapezmetoden}, trapezmetoden, og \eqref{eq:simpsonsmetode}, Simpsons metode, fra afsnit \ref{sec:trapezmetoden} og \ref{sec:simpsonsmetode}, der tilnærmelsesvist bestemmer det bestemte integral. Samtidig kender vi også antallet af beregningsskridt, da dette er antallet af delintervaller $n$. Derfor kan vi med sikkerhed sige, at vi kan lave en algoritme der tilnærmelsesvist udregner arealet under en vilkårlig matematisk funktion.
-Når man skal skrive en algoritme til en computer, skal dette gøres i et programmeringssprog\footnote{\cite{denstoredanske:algoritme}[Den store danske]}, som f.eks. JavaScript, PHP, C++, java osv. Hvert sprog kan bruges til forskellige ting og på forskellige enheder. Nogle programmeringssprog bruges til regulære computerprogrammer mens andre er udviklet til at fungere i en webbrowser som Chrome, Internet Explorer og lignende.
+Når man skal omsætte en matematisk formel, til noget computeren kan forstå og regne med, skal man lave en såkaldt \emph{algoritme}. En algoritme er en forskrift til løsning af et matematisk eller logisk problem, hvor man kender antallet af beregningsskridt\footnote{\cite{version2:algoritme}[Version2.dk]}. I dette tilfælde er forskriften de 2 udledte formler \eqref{eq:trapezmetoden} trapezmetoden, og \eqref{eq:simpsonsmetode} Simpsons metode, fra afsnit \ref{sec:trapezmetoden} og \ref{sec:simpsonsmetode}, der tilnærmelsesvist bestemmer det bestemte integral. Samtidig kender vi også antallet af beregningsskridt, da dette er antallet af delintervaller $n$. Derfor kan vi med sikkerhed sige, at vi kan lave en algoritme der tilnærmelsesvist udregner arealet under en vilkårlig matematisk funktion.
+Når man skal skrive en algoritme til en computer, skal dette gøres i et programmeringssprog\footnote{\cite{denstoredanske:algoritme}[Den store danske]}, som f.eks. JavaScript, PHP, C++, Java eller lignende. Hvert sprog kan bruges til forskellige ting og på forskellige enheder. Nogle programmeringssprog bruges til regulære computerprogrammer, mens andre er udviklet til at fungere i en webbrowser som Chrome, Internet Explorer og lignende.
 \\
-Når man arbejder med algoritmer, er der nogle ting, som er meget vigtige at have styr på. Det ene er selvfølgelig at algoritmen giver et korrekt resultat, altså at den er nøjagtig, og det andet er hvor lang tid algoritmen bruger på udregningerne. Der skal være en fin balance mellem nøjagtigheden og effektiviteten. Nogle gange er det meget vigtigt at algoritmen er 100\% nøjatig, mens at andre algoritmer er så avancerede, at en 100\% nøjagtighed tager for lang tid. Nogle algoritmer kan være så komplekse og kræve så store beregningsmæssige ressourcer, at de ikke kan løses med de computere, vi har adgang til i dag.
+Når man arbejder med algoritmer, er der nogle ting, som er meget vigtige at have styr på. Det ene er selvfølgelig, at algoritmen giver et korrekt resultat, altså at den er nøjagtig, og det andet er hvor lang tid algoritmen bruger på udregningerne. Der skal være en fin balance mellem nøjagtigheden og effektiviteten. Nogle gange er det meget vigtigt at algoritmen er 100\% nøjatig, mens at andre algoritmer er så avancerede, at en 100\% nøjagtighed tager for lang tid. Nogle algoritmer kan være så komplekse og kræve så store beregningsmæssige ressourcer, at de ikke kan løses med de computere, vi har adgang til i dag.\footnote{\cite{version2:algoritme}}
 \\\\
 Jeg har brugt JavaScript til at opbygge mine algoritmer for Trapezmetoden og Simpsons metode. Fordelen ved JavaScript er at det kan køre i browseren, og det er derfor forholdsvist nemt for alle at køre. Samtidig er JavaScript et af de sprog, der har en mere simpel syntaks, så det er nemt at forstå, og det er derfor også meget tilgængeligt.
 
 \subsection{Effektivitetsoptimering i JavaScript}
-Når man skal skrive en algoritme, er det næsten umuligt ikke at have et såkaldt \emph{loop}. Et loop, løkke på dansk, er en kode, der kører så længe at en defineret erklæring passer. Den løkke jeg skal bruge til mine algoritmer, skal køre $n$ antal gange, altså den skal køre det antal gange, jeg har delt min funktion op i. I teorien kan n bevæge sig mod uendelig, men dette vil så også tage op mod uendelig tid. For at finde en 100\% præcis værdi af vores numeriske integration, kan vi godt risikere at vi kommer op på et delinterval på flere millioner. Derfor at det vigtigt at vi optimere løkken mest muligt, da det er en kode, der potentielt skal køre mange millioner gange. En måde at optimere løkken på er ved at vælge en while-løkke i stedet for en for-løkke. Et hurtigt eksperiment\footnote{\cite{forvswhile}} viser, at while-løkken i gennemsnit er en smule hurtigere\footnote{Det skal nævnes at det ikke er et 100\% korrekt eksperiment, da andre processer fra computeren, kan have haft en rolle i beregningstiden. Hvis man dog fjerner de meget afvigende resultater fra det samlede billede, er while-løkken stadig gennemsnitlig hurtigst.}. Samtidig udførte eksperimentet kun en meget simpel beregning, hvor den algoritme vi skal udregne, er meget mere avanceret. Derfor kan der være en stor besparelse i tid og beregningskraft, hvis man bruger en while-løkke i stedet for en for-løkke.
+Når man skal skrive en algoritme, er det næsten umuligt ikke at have et såkaldt \emph{loop}. Et loop, løkke på dansk, er en kode, der kører så længe at en defineret erklæring passer. Den løkke jeg skal bruge til mine algoritmer, skal køre $n$ antal gange, altså den skal køre det antal gange, jeg har delt mit interval op i. I teorien kan n bevæge sig mod uendelig, men dette vil så også tage op mod uendelig tid. For at finde en 100\% præcis værdi af vores numeriske integration, kan vi godt risikere at vi kommer op på et delinterval på flere millioner. Derfor at det vigtigt at vi optimerer løkken mest muligt, da det er en kode, der potentielt skal køre mange millioner gange.\\
+En måde at optimere løkken på, er ved at vælge en while-løkke i stedet for en for-løkke. Et hurtigt eksperiment\footnote{\cite{forvswhile}} viser, at while-løkken i gennemsnit er en smule hurtigere\footnote{Det skal nævnes at det ikke er et 100\% korrekt eksperiment, da andre processer fra computeren, kan have haft en rolle i beregningstiden. Hvis man dog fjerner de meget afvigende resultater fra det samlede billede, er while-løkken stadig gennemsnitlig hurtigst.}. Eksperimentet udførte kun en meget simpel beregning, hvor den algoritme vi skal udregne, er meget mere avanceret. Derfor kan der være en stor besparelse i tid og beregningskraft, hvis man bruger en while-løkke i stedet for en for-løkke.
 
 
 \subsection{Opbygning af algoritmerne}
@@ -287,7 +289,7 @@ Formlen for Trapezmetoden \eqref{eq:trapezmetoden}, som også kan ses på side \
 \begin{align}
 \int_{a}^{b}f(x) \approx \frac{h}{2}(f(x_0) + 2f(x_1) + \cdots + 2f(x_{n-1}) + f(x_n)) &&\text{Hvor } h=\frac{b-a}{n} \nonumber
 \end{align}
-Når man analyserer Trapezmetoden i forhold til at skulle lave en algoritme, er der et par ting man skal have fokus på. For det første er $\frac{h}{2}$ uden for parentesen hvilket gør, at vi til sidst i algoritmen kan udregne summen af delarealerne ganget med $\frac{h}{2}$. En anden ting er, at første og sidste punkt, henholdsvis $x_0$ og $x_n$ ikke skal ganges med 2 ligesom resten af delarealerne. Derfor kan vi sætte disse to uden for vores hoved-løkke, hvilket gør at vi ikke skal bekymre os om dem i løkken.
+Når man analyserer Trapezmetoden i forhold til at skulle lave en algoritme, er der et par ting man skal have fokus på. For det første er $\frac{h}{2}$ uden for parentesen, hvilket gør at vi til sidst i algoritmen kan udregne summen af delarealerne multipliceret med $\frac{h}{2}$. En anden ting er, at første og sidste punkt, henholdsvis $x_0$ og $x_n$ ikke skal ganges med 2 ligesom resten af delarealerne. Derfor kan vi sætte disse to uden for vores hoved-løkke, hvilket gør at vi ikke skal bekymre os om dem i løkken.
 Ud fra denne korte analyse har jeg skrevet min algoritme for Trapezmetoden i intervallet $[a;b]$ og med antallet af delintervaller $n$.
 \begin{lstlisting}[caption="udregnArealTrapezmetoden()"]
 function udregnArealTrapezmetoden(a,b,n) {
@@ -312,12 +314,12 @@ function udregnArealTrapezmetoden(a,b,n) {
 }
 \end{lstlisting}
 
-Min algoritme er opbygget som en funktion med variabler $a,b,n$. $a$ er startintervallet, $b$ er slutintervallet og $n$ er antal delintervaller, præcis som i formlen for Trapezmetoden. $h$ defineres præcis som i Trapezmetoden, dvs $h=\frac{b-a}{n}$. Variablen $funktion$ tager værdien fra et input der har id'et "funktion", som indeholder vores funktion formateret som JavaScript. Et eksempel på dette ses her for $f(x) = e^{-x^2}$
+Min algoritme er opbygget som en funktion med variabler $a,b,n$. $a$ er startintervallet, $b$ er slutintervallet og $n$ er antal delintervaller, præcis som i formlen for Trapezmetoden. $h$ defineres præcis som i Trapezmetoden, dvs $h=\frac{b-a}{n}$. Variablen $funktion$ tager værdien fra et input, der har id'et "funktion", som indeholder vores funktion formateret som JavaScript. Et eksempel på dette ses her for $f(x) = e^{-x^2}$
 \begin{lstlisting}
 Math.exp(Math.pow(-x,2))
 \end{lstlisting}
 Variablen $w$ er vores tæller som starter på 1. $x$ bliver sat til a, da vi skal substituere $x$ ind i vores funktion. På linje 8 udregnes arealet af $x_1$, som sker før vores løkke, som nævnt i analysen. På linje 9 starter vores løkke, som kører så længe w er mindre end n. Dvs. at løkken kører lige ind til vi når sidste punkt, $x_{n-1}$, så vi kan regne $x_n$ særskilt. Inde i løkken bliver x sat til længden af delintervallet, $h$ lagt sammen med sig selv, når vi finder den næste x-værdi i intervallet. Så udregnet arealet af delintervallet og ligges til variablen $areal$. Derefter lægger vi 1 til w, så den tæller op mod n.
-Efter løkken har kørt, sætter vi $x$ til at være vores sidste værdi, $b$, og regner arealet for det sidste delinterval. Til sidst ganges hele det udregnede delareal med $\frac{h}{2}$ for at finde det samlede areal. Funktionen returnerer arealet til sidst.
+Efter løkken har kørt, sætter vi $x$ til at være vores sidste punkt, $b$, og regner arealet for det sidste delinterval. Til sidst ganges hele det udregnede delareal med $\frac{h}{2}$ for at finde det samlede areal. Funktionen returnerer arealet til sidst.
 
 
 \subsubsection{Simpsons metode}
@@ -327,7 +329,7 @@ Formlen for Simpsons metode \eqref{eq:simpsonsmetode}, som også kan ses på sid
 \\ \text{Hvor } h=\frac{b-a}{h} \text{ og $n$ er lige} \nonumber
 \end{align}
 Simpsons metode ser en del anderledes ud end Trapezmetoden, så derfor skal den analyseres anderledes, og algoritmen kommer formentlig også til at blive mere avanceret.\\
-Igen har vi h uden for parentesen, dog bare $\frac{h}{3}$ i stedet. Samtidig skal punkt $x_0$ og $x_n$ ikke ganges med noget, så de kan også beregnes uden for løkken. En ting der skal lægges meget mærke til ved Simpsons metode, er at den skifter mellem at multiplicere med 4 og 2. En måde at beskrive det er, at alle ulige skal ganges med 4 og lige med 2. Derfor skal løkken indeholde en \emph{if/else} sætning, der tjekker om det er et lige eller ulige antal vi beregner på. Ud fra denne analyse, har jeg skrevet min algoritme for Simpsons metode i intervallet $[a;b]$ og med antallet af delintervaller $n$
+Igen har vi $h$ uden for parentesen, dog bare $\frac{h}{3}$ i stedet. Samtidig skal punkt $x_0$ og $x_n$ ikke ganges med noget, så de kan også beregnes uden for løkken. En ting der skal lægges meget mærke til ved Simpsons metode, er at den skifter mellem at multiplicere med 4 og 2. En måde at beskrive det er, at alle ulige skal ganges med 4 og lige med 2. Derfor skal løkken indeholde en \emph{if/else} sætning, der tjekker om det er et lige eller ulige antal vi beregner på. Ud fra denne analyse, har jeg skrevet min algoritme for Simpsons metode i intervallet $[a;b]$ og med antallet af delintervaller $n$
 
 \begin{lstlisting}[caption="udregnArealSimpsonsMetode()"]
 function udregnArealSimpsonsMetode(a,b,n) {
@@ -356,15 +358,14 @@ return areal;
 }
 \end{lstlisting}
 
-Igen er algoritmen opbygget som en funktion med intervallet $[a;b]$ og antal delintervaller $n$. De første 8 linjer er præcis det samme som i Algoritme 1: "udregnArealSimpsonsMetode()", hvor der defineres forskellige variabler, og arealet for $x_1$ udregnes. Det næste er while-løkken på linje 9 som kører så længe w er mindre end antal delintervaller $n$. Først sættes x til at være næste delinterval, og dernæst tjekkes der om tælleren, $w$, er et lige eller ulige tal. Dette gør den vha. modulus funktionen, (\emph{skrives \% i JavaScript}), som er en matematisk funktion. Modulus svarer til det positive heltal, der er i rest, når man dividerer. Så når man tager modulus 2 af et tal, giver det enten en rest på 1, når tallet af ulige, og ellers en rest på 0, da alle lige tal går op i 2. Arealet af delintervallet regnes så ud fra denne \emph{if/else}-sætning, hvor lige ganges med 2 og ulige med 4.
+Igen er algoritmen opbygget som en funktion med intervallet $[a;b]$ og antal delintervaller $n$. De første 8 linjer er præcis det samme som i Algoritme 1: "udregnArealTrapezmetoden()", hvor der defineres forskellige variabler, og arealet for $x_1$ udregnes. Det næste er while-løkken på linje 9 som kører så længe w er mindre end antal delintervaller $n$. Først sættes x til at være næste delinterval, og dernæst tjekkes der om tælleren, $w$, er et lige eller ulige tal. Dette gør den vha. modulus funktionen, (\emph{skrives \% i JavaScript}), som er en matematisk funktion. Modulus svarer til det positive heltal, der er i rest, når man dividerer. Så når man tager modulus 2 af et tal, giver det enten en rest på 1, når tallet af ulige, og ellers en rest på 0, da alle lige tal går op i 2. Arealet af delintervallet regnes så ud fra denne \emph{if/else}-sætning, hvor lige ganges med 2 og ulige med 4.
 \\Resten af koden afviger kun fra algoritmen til Trapezmetoden ved at gange det samlede udregnede areal med $\frac{h}{3}$ som det står i Simpsons metode \eqref{eq:simpsonsmetode}.
 \subsection{Vurdering af effektiviteten og nøjagtigheden}
-Helt grundlæggende vil jeg 
-Når jeg skal vurdere nøjagtigheden, vil jeg både vurdere selve metoden og algoritmen. Hvis algoritmen er skrevet korrekt, burde der ikke være forskel på nøjagtigheden i forhold til metoden. Jeg vil undersøge nøjagtigheden ud fra resultatet af algoritmen/metoden opdelt i forskellige delintervaller, $n$, i forhold til det bestemte integral.
+Til at vurdere nøjagtigheden, vil jeg både vurdere selve metoden og algoritmen. Hvis algoritmen er skrevet korrekt, burde der ikke være forskel på nøjagtigheden i forhold til metoden. Jeg vil undersøge nøjagtigheden ud fra resultatet af algoritmen/metoden opdelt i forskellige delintervaller $n$, i forhold til det bestemte integral.
 \\Effektiviteten kan være svær at vurdere, da jeg ikke har noget at stille mine data op imod. Jeg har undersøgt hvor lang tid det tager, at køre algoritmen med forskellige delintervaller. Denne tid kan sammenlignes med nøjagtigheden af algoritmen, og ud fra det vil jeg vise en sammenhæng mellem præcision og hastighed.\\
-Jeg har udvalgt 2 funktioner som minder om hinanden, dog er den ene en del mere avanceret end den anden. Den ene er $e^x$ og den anden $e^{-x^2}$. Den anden funktion, $e^{x^2}$, er en af de funktioner man ikke kan bestemme det bestemte integral af, mens den første er simpel at bestemme. Til at bestemme arealet der er så tæt på det bestemte integral som muligt for $e^{-x^2}$, har jeg brugt Mathcad\footnote{Mathcad bruger også Numerisk integration til at udregne arealet, men delintervallet i Mathcad er meget højt, og derfor går jeg ud fra at tallet er præcist nok til at sammenligne med.}, som har givet den værdi der står i tabel \ref{tab:trapezmetodenex2} og \ref{tab:simpsonsmetodeex2}
+Jeg har udvalgt 2 funktioner som minder om hinanden, dog er den ene en del mere avanceret end den anden. Den ene er $e^x$ og den anden $e^{-x^2}$. Den anden funktion, $e^{-x^2}$, er en af de funktioner man ikke kan bestemme det bestemte integral af, mens den første er simpel at bestemme. Til at bestemme arealet der er så tæt på det bestemte integral som muligt for $e^{-x^2}$, har jeg brugt Mathcad\footnote{Mathcad bruger også Numerisk integration til at udregne arealet, men delintervallet i Mathcad er meget højt, og derfor går jeg ud fra at tallet er præcist nok til at sammenligne med.}, som har givet den værdi der står i tabel \ref{tab:trapezmetodenex2} og \ref{tab:simpsonsmetodeex2}
 \subsubsection{Nøjagtighed og effektivitet når $f(x)=e^x$}
-Funktionen $e^x$ er en forholdsvis simpel funktion, som er nem at bestemme integralet af. Hvis vi sammenligner resultater fra Trapezmetoden og Simpsons metode fra tabel \ref{tab:trapezmetodenex} og \ref{tab:simpsonsmetodeex}. Hvis vi kigger på nøjagtigheden af metoderne og algoritmerne, tegner der sig et klart billede. Simpsons metode er den mest præcise, og rammer allerede det bestemte integral ved $n=14$ som man kan se på tabel \ref{tab:simpsonsmetodeex}. Derimod skal Trapezmetoden bruge et antal delintervaller på hele 180, for at bestemme det korrekte areal.
+Funktionen $e^x$ er en forholdsvis simpel funktion, som er nem at bestemme integralet af. Hvis vi sammenligner resultater fra Trapezmetoden og Simpsons metode fra tabel \ref{tab:trapezmetodenex} og \ref{tab:simpsonsmetodeex}, og kigger på nøjagtigheden af metoderne og algoritmerne, tegner der sig et klart billede. Simpsons metode er den mest præcise, og rammer allerede det bestemte integral ved $n=14$ som man kan se på tabel \ref{tab:simpsonsmetodeex}. Derimod skal Trapezmetoden bruge et antal delintervaller på hele 180, for at bestemme det korrekte areal.
 \begin{table}[H]
 	\caption {Nøjagtighed af Trapezmetoden for $f(x)=e^x$ i intervallet $[-1;3]$}
 	\label{tab:trapezmetodenex}
@@ -402,7 +403,7 @@ Hvis man kigger på effektiviteten af algoritmerne, altså hvor stor beregningst
 Ud fra disse observationer og resultaterne fra tabel \ref{tab:trapezmetodenex} og \ref{tab:simpsonsmetodeex} kan vi sige, at Trapezmetoden har den korteste beregningstid per delinterval, men at Simpsons metoden er mest effektiv, og giver det mest nøjagtige resultat når $f(x)=e^x$.
 
 \subsubsection{Nøjagtighed og effektivitet når $f(x)=e^{-x^2}$}
-$f(x)=e^{-x^2}$ er en del mere avanceret funktion end $e^x$. Dette kan man også se på tabel \ref{tab:trapezmetodenex2} og \ref{tab:simpsonsmetodeex2}, da Simpsons metoden først finder det rigtige resultat ved $n=252$. Dog har trapezmetoden problemer ved at finde det korrekte areal, da den selv ved 2000 delintervaller, stadig ikke har fundet det Mathcad-udregnede areal.
+$f(x)=e^{-x^2}$ er en del mere avanceret funktion end $e^x$. Dette kan man også se på tabel \ref{tab:trapezmetodenex2} og \ref{tab:simpsonsmetodeex2}, da Simpsons metode først finder det rigtige resultat ved $n=252$. Dog har trapezmetoden problemer ved at finde det korrekte areal, da den selv ved 2000 delintervaller, stadig ikke har fundet det Mathcad-udregnede areal.
 \begin{table}[H]
 	\caption {Nøjagtighed af Trapezmetoden for $f(x)=e^{-x^2}$ i intervallet $[-1;3]$} 
 	\label{tab:trapezmetodenex2}
@@ -441,12 +442,12 @@ $f(x)=e^{-x^2}$ er en del mere avanceret funktion end $e^x$. Dette kan man også
 		\end{tabular}
 	\end{center}
 \end{table}
-Igen er trapezmetoden den hurtigste per delinterval, men det bliver overskygget af Simpsons metode til at udregne det nøjagtige resultat hurtigst og ved færrest delintervaller.
+Igen er trapezmetoden den hurtigste per delinterval, men den bliver overskygget af Simpsons metode til at udregne det nøjagtige resultat hurtigst og ved færrest delintervaller.
 \\\\
-Alt i alt kan man med sikkerhed sige, at Simpsons metode både er den mest nøjagtige og effektive metode. Den er både hurtigst til at finde det rigtige resultat, og finder også det rigtige resultat ved færre delintervaller.
+Alt i alt kan man med sikkerhed sige, at Simpsons metode både er den mest nøjagtige og effektive metode. Den er hurtigst til at finde det rigtige resultat, og finder også det rigtige resultat ved færre delintervaller.
 
 \section{Konklusion}
-I denne opgave har jeg kort forklaret om numerisk integration og redegjort for de to numeriske metoder Trapezmetoden og Simpsons metode. Derudover har jeg omsat metoderne til en computer algoritme, hvor jeg har vurderet effektiviteten og nøjagtigheden af både metoden og algoritmen.
+I denne opgave har jeg kort forklaret om numerisk integration og redegjort for de to numeriske metoder Trapezmetoden og Simpsons metode. Derudover har jeg omsat metoderne til en computer-algoritme, hvor jeg har vurderet effektiviteten og nøjagtigheden af både metoden og algoritmen.
 
 \clearpage
 %\addcontentsline{toc}{section}{Litteratur}
