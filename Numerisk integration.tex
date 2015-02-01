@@ -10,7 +10,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[hidelinks]{hyperref}
 \usepackage{float}
-\usepackage[margin=1.3in]{geometry}
+\usepackage[margin=1.4in]{geometry}
+\usepackage{pdfpages}
 
 \definecolor{lightgray}{rgb}{.9,.9,.9}
 \definecolor{darkgray}{rgb}{.4,.4,.4}
@@ -57,6 +58,8 @@
 %\pagestyle{headings}
 
 \begin{document}
+	\includepdf[pages={1}]{Problemformulering.pdf}
+	\setcounter{page}{1}
 \title{Numerisk Integration}
 \author{Søren Fritzbøger 3F\\
 HTX Hillerød - Erhversskolen Nordsjælland\\
@@ -65,9 +68,9 @@ Vejledt af Stig Nørskov Jacobsen og Christian Reinhold}
 \maketitle
 
 \begin{abstract}
-This article demonstrates a basic set of LaTeX formatting commands.
-Compare the typeset output side-by-side with the input document.smøøre
+This paper examines numerical integration and the methods used to approximate the definite integral. It also determines the knowledge needed to translate a mathematical equation to a working computer algorithm. Finally it evaluates the accuracy and efficiency of the methods and corresponding algorithms. The examined methods are called ``The trapezoidal rule" and ``Simpson's Rule", and they aim to approach to value of the definite integral. The examination of the two numerical methods, The trapezoidal rule, and Simpson's rule shows, that they are effective and working methods to determine the value of the definite integral, even for functions that can't directly be integrated. The results from the evaluation of efficiency and accuracy, shows that Simpson's rule is both the fastest and most precise method for determining the areal under a function. There is also a significant difference between the speed and accuracy of the methods, where Simpson's rule wins with the fastest total calculation time for the exact value of the definite integral.
 \end{abstract}
+
 \newpage
 \tableofcontents
 \newpage
@@ -270,7 +273,7 @@ Dette bliver reduceret til Simpsons metode\footnote{\cite[s. 16]{2012matA}} \eqr
 
 \pagebreak
 \section{Numerisk integration og computere}
-Når man skal omsætte en matematisk formel, til noget computeren kan forstå og regne med, skal man lave en såkaldt \emph{algoritme}. En algoritme er en forskrift til løsning af et matematisk eller logisk problem, hvor man kender antallet af beregningsskridt\footnote{\cite{version2:algoritme}[Version2.dk]}. I dette tilfælde er forskriften de 2 udledte formler \eqref{eq:trapezmetoden} trapezmetoden, og \eqref{eq:simpsonsmetode} Simpsons metode, fra afsnit \ref{sec:trapezmetoden} og \ref{sec:simpsonsmetode}, der tilnærmelsesvist bestemmer det bestemte integral. Samtidig kender vi også antallet af beregningsskridt, da dette er antallet af delintervaller $n$. Derfor kan vi med sikkerhed sige, at vi kan lave en algoritme der tilnærmelsesvist udregner arealet under en vilkårlig matematisk funktion.
+Når man skal omsætte en matematisk formel, til noget computeren kan forstå og regne med, skal man lave en såkaldt \emph{algoritme}. En algoritme er en forskrift til løsning af et matematisk eller logisk problem, hvor man kender antallet af beregningsskridt\footnote{\cite{version2:algoritme}[Version2.dk]}. I dette tilfælde er forskriften de 2 udledte formler trapezmetoden \eqref{eq:trapezmetoden}, og Simpsons metode \eqref{eq:simpsonsmetode}, fra afsnit \ref{sec:trapezmetoden} og \ref{sec:simpsonsmetode}, der tilnærmelsesvist bestemmer det bestemte integral. Samtidig kender vi også antallet af beregningsskridt, da dette er antallet af delintervaller $n$. Derfor kan vi med sikkerhed sige, at vi kan lave en algoritme der tilnærmelsesvist udregner arealet under en vilkårlig matematisk funktion.
 Når man skal skrive en algoritme til en computer, skal dette gøres i et programmeringssprog\footnote{\cite{denstoredanske:algoritme}[Den store danske]}, som f.eks. JavaScript, PHP, C++, Java eller lignende. Hvert sprog kan bruges til forskellige ting og på forskellige enheder. Nogle programmeringssprog bruges til regulære computerprogrammer, mens andre er udviklet til at fungere i en webbrowser som Chrome, Internet Explorer og lignende.
 \\
 Når man arbejder med algoritmer, er der nogle ting, som er meget vigtige at have styr på. Det ene er selvfølgelig, at algoritmen giver et korrekt resultat, altså at den er nøjagtig, og det andet er hvor lang tid algoritmen bruger på udregningerne. Der skal være en fin balance mellem nøjagtigheden og effektiviteten. Nogle gange er det meget vigtigt at algoritmen er 100\% nøjatig, mens at andre algoritmer er så avancerede, at en 100\% nøjagtighed tager for lang tid. Nogle algoritmer kan være så komplekse og kræve så store beregningsmæssige ressourcer, at de ikke kan løses med de computere, vi har adgang til i dag.\footnote{\cite{version2:algoritme}}
@@ -444,10 +447,11 @@ $f(x)=e^{-x^2}$ er en del mere avanceret funktion end $e^x$. Dette kan man også
 \end{table}
 Igen er trapezmetoden den hurtigste per delinterval, men den bliver overskygget af Simpsons metode til at udregne det nøjagtige resultat hurtigst og ved færrest delintervaller.
 \\\\
-Alt i alt kan man med sikkerhed sige, at Simpsons metode både er den mest nøjagtige og effektive metode. Den er hurtigst til at finde det rigtige resultat, og finder også det rigtige resultat ved færre delintervaller.
+Alt i alt kan man med sikkerhed sige, at Simpsons metode både er den mest nøjagtige og effektive metode. Den er hurtigst til at finde det rigtige resultat, da den finder det rigtige resultat ved færre delintervaller, og gør det samlet set hurtigere end Trapezmetoden.
 
+\pagebreak
 \section{Konklusion}
-I denne opgave har jeg kort forklaret om numerisk integration og redegjort for de to numeriske metoder Trapezmetoden og Simpsons metode. Derudover har jeg omsat metoderne til en computer-algoritme, hvor jeg har vurderet effektiviteten og nøjagtigheden af både metoden og algoritmen.
+I denne opgave har jeg kort forklaret om numerisk integration og redegjort for de to numeriske metoder Trapezmetoden og Simpsons metode. Derudover har jeg omsat metoderne til en computer-algoritme, hvor jeg har vurderet effektiviteten og nøjagtigheden af både metoden og algoritmen. Ud fra min redegørelse af Trapezmetoden kan jeg konkludere, at summen af delarealerne i intervallet $[a;b]$ tilnærmelsesvist svarer til det bestemte integral. Det samme gør sig gældende for Simpsons metode, hvor jeg dog også kan konkludere, at resultatet teoretisk set bliver mere præcist ved færre delintervaller end ved Trapezmetoden. Når man skal omsætte en matematisk formel til et computer-program, skal man lave en algoritme. Det er vigtigt at algoritmen giver det korrekte resultat, og at den gør dette mest effektivt. Ud fra mine algoritmer kan jeg konkludere, at det er muligt at omsætte metoderne til numerisk integration til noget computeren kan forstå. Samtidig har jeg også vist, at numerisk integration kan bruges til at udregne arealet under funktioner, som ikke direkte kan integreres. Til sidst har jeg undersøgt effektiviteten af mine algoritmer, og kommet frem til at Simpsons metode er den mest nøjagtige og effektive metode.
 
 \clearpage
 %\addcontentsline{toc}{section}{Litteratur}
@@ -486,11 +490,15 @@ I denne opgave har jeg kort forklaret om numerisk integration og redegjort for d
 \end{thebibliography}
 
 \section{Kildekritik}
-Når man skriver faglige projekter som dette, baseret på fakta, er man nødt til at have pålidelige og korrekte kilder. Derfor er kildekritik en essentiel del af det at skrive skriftlige opgaver. 
-De kilder jeg har anvendt, har hovedsageligt være leksika-internetsider, hvor kilderne er så troværdige som muligt. Her snakker jeg om Den store danske, som bliver udgivet af Gyldendals. Den store danske er, modsat f.eks. Wikipedia, en leksikon side hvor brugerne ikke selv kan rette i indholdet, og dermed bliver vedligeholdt af udvalgt personale fra Gyldendals, hvilke sikrer korrekte data. 
-Jeg har også benyttet mig af et professoroplæg, omhandlende det skrå kast, som er bygget op således at det kan anvendes som baggrund til et studieprojekt. Kilden har derfor været meget relevant for mit projekt, og har samtidigt en høj troværdighed, grundet forfatterens profession. Dog har jeg dobbelttjekket de vigtigste data, for at være helt sikker, og jeg har derfor stor tiltro til kilden. 
-Kilderne fra Nasa er også meget troværdige kilder, da internet siderne for det første er skrevet af Nasa og for det andet ligger på et specielt domæne (.gov), der er reserveret til regeringen i USA. Dette betyder at både Nasa og USA ligger navn til kilden, hvilket gør den sikker.  
-På trods af at det har været svært at finde relevante bøger, har jeg så vidt muligt forsøgt at holde til bøger som første informationskilde. Dette er da bøger generelt har en højere troværdighed en hjemmesider, da de kræver mere at producere, og ikke bare kan ændres efter publikation. Ved oven i at vælge bøger som bruges i undervisningen, er bøgerne også blevet godkendt af undervisningsministeriet, hvilket må betyde at deres indhold er yderst kvalificeret.
+Det er vigtigt at have styr på sin kildekritik, så man sikrer at det faglige indhold er velskrevet og korrekt. Det handler om at undersøge forfatteren, kilden(internetsiden, bogen osv.) og selve indholdet, og konkludere om det er brugbart og faktuelt korrekt, inden man begynder at overveje kildens brug til opgaven.
+\\
+Til at udarbejde denne SRP har jeg prøvet hovedsageligt at vælge godkendte leksikon hjemmesider. Eksempler på dette er Den Store Danske, som bliver udgivet af Gyldendal. På Den Store Danske har brugerne ikke mulighed for at rette artiklerne, men det er derimod godkendte brugere og Den Store Danskes egne redaktører der vedligeholder artiklerne og sikrer det faglige indhold.
+\\\\
+Udover henvisningerne til Den Store Danske, har jeg fået udleveret \emph{Forberedelse til Matematik A højere teknisk eksamen 2012} som er hovedkilden til afsnittet om numerisk integration. Dette forberedelsesmateriale er udarbejdet af Undervisningsministeriet, hvilket sikrer et højt og korrekt fagligt niveau.
+\\\\
+Version2.dk og Stoimen's web log, er mindre og sekundære kilder, hvor det er svært at bestemme det faktuelle niveau. Version2.dk beskæftiger sig med IT generelt, og har en af Danmarks største blogs inden for IT-nyheder, så går ud fra at deres leksikon er fagligt korrekt. Stoimen's web log er dog en del mere usikker, men herfra er der ikke udtaget faktuelle data. Den sidste side, Interactive Maths, er også besværlig at bestemme det faktuelle niveau. Dog er udgiveren en professor i matematik, som har undervist i mange år. Samtidig er der mange brugeranmeldelser, der verificerer faktaene. 
+\\\\
+Jeg har haft svært ved at finde relevante bøger til kildehenvisning. Fandt bogen \emph{Introduction to numerical methods and analysis}, men indholdet var kortfattet og indeholdte ikke nyttigt information til min opgave.
 \section{Bilag}
 \subsection{Bilag 1 - Regneregler for integralregning}
 \begin{center}

@@ -6,17 +6,17 @@
 \contentsline {subsubsection}{\numberline {3.1.1}Opdeling i flere delintervaller}{6}{subsubsection.3.1.1}
 \contentsline {section}{\numberline {4}Simpsons metode}{7}{section.4}
 \contentsline {subsection}{\numberline {4.1}Bevis for Simpsons metode}{7}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}Opdeling i flere delintervaller}{9}{subsubsection.4.1.1}
-\contentsline {section}{\numberline {5}Numerisk integration og computere}{12}{section.5}
-\contentsline {subsection}{\numberline {5.1}Effektivitetsoptimering i JavaScript}{12}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Opbygning af algoritmerne}{13}{subsection.5.2}
-\contentsline {subsubsection}{\numberline {5.2.1}Trapezmetoden}{13}{subsubsection.5.2.1}
-\contentsline {subsubsection}{\numberline {5.2.2}Simpsons metode}{14}{subsubsection.5.2.2}
-\contentsline {subsection}{\numberline {5.3}Vurdering af effektiviteten og n\IeC {\o }jagtigheden}{16}{subsection.5.3}
-\contentsline {subsubsection}{\numberline {5.3.1}N\IeC {\o }jagtighed og effektivitet n\IeC {\r a}r $f(x)=e^x$}{16}{subsubsection.5.3.1}
-\contentsline {subsubsection}{\numberline {5.3.2}N\IeC {\o }jagtighed og effektivitet n\IeC {\r a}r $f(x)=e^{-x^2}$}{17}{subsubsection.5.3.2}
-\contentsline {section}{\numberline {6}Konklusion}{18}{section.6}
-\contentsline {section}{\numberline {7}Litteraturliste}{19}{section.7}
-\contentsline {section}{\numberline {8}Kildekritik}{19}{section.8}
-\contentsline {section}{\numberline {9}Bilag}{20}{section.9}
-\contentsline {subsection}{\numberline {9.1}Bilag 1 - Regneregler for integralregning}{20}{subsection.9.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Opdeling i flere delintervaller}{10}{subsubsection.4.1.1}
+\contentsline {section}{\numberline {5}Numerisk integration og computere}{13}{section.5}
+\contentsline {subsection}{\numberline {5.1}Effektivitetsoptimering i JavaScript}{13}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Opbygning af algoritmerne}{14}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Trapezmetoden}{14}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Simpsons metode}{16}{subsubsection.5.2.2}
+\contentsline {subsection}{\numberline {5.3}Vurdering af effektiviteten og n\IeC {\o }jagtigheden}{17}{subsection.5.3}
+\contentsline {subsubsection}{\numberline {5.3.1}N\IeC {\o }jagtighed og effektivitet n\IeC {\r a}r $f(x)=e^x$}{17}{subsubsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.2}N\IeC {\o }jagtighed og effektivitet n\IeC {\r a}r $f(x)=e^{-x^2}$}{18}{subsubsection.5.3.2}
+\contentsline {section}{\numberline {6}Konklusion}{20}{section.6}
+\contentsline {section}{\numberline {7}Litteraturliste}{21}{section.7}
+\contentsline {section}{\numberline {8}Kildekritik}{21}{section.8}
+\contentsline {section}{\numberline {9}Bilag}{23}{section.9}
+\contentsline {subsection}{\numberline {9.1}Bilag 1 - Regneregler for integralregning}{23}{subsection.9.1}
